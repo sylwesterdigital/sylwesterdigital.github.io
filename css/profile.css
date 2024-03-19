@@ -1,0 +1,488 @@
+@keyframes gradientScroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.rainbow-gradient {
+    width: 1rem;
+    /* Adjust the width as needed */
+    height: 1rem;
+    /* Adjust the height as needed */
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red, violet);
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 50%;
+    background-size: 200% 100%;
+    /* Twice the width to cover the animation distance */
+    animation: gradientScroll 5s linear infinite;
+    /* Adjust the duration as needed */
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background: black;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: -1px 3px 4px #00000036;
+}
+
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+#brand {
+    display: flex;
+    align-items: center;
+}
+#logo {
+    /* Your logo styles go here */
+    transition: transform 0.3s ease;
+    /* Add a transition for smooth animation */
+    pointer-events: all;
+    cursor: crosshair;
+}
+#logo:hover {
+    transform: scale(2);
+    /* Bounce effect by scaling up */
+}
+.menu-icon {
+    display: none;
+}
+.header-links {}
+.header-links a {
+    padding: 0.5rem;
+}
+/*.h-l {
+	color: rgba(255,255,255,0.75);
+	border-bottom: 1px solid rgba(255,255,255,0);
+	padding: 0.5rem;
+}
+.h-l:hover {
+	color: rgba(255,255,255,1);
+	border-bottom: 1px solid rgba(255,255,255,0.75);
+}
+.h-l:active {
+	color: red;
+}*/
+.h-l {
+    color: rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    padding: 0.5rem;
+    padding-bottom: 0.25rem;
+    position: relative;
+    /* Add this to create the animation effect */
+}
+.h-l::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: width 0.3s ease;
+    /* Adjust the duration as needed */
+}
+.h-l:hover::after {
+    width: 100%;
+    /* When hovered, expand the border to 100% width */
+}
+@media (max-width: 390px) {
+    .header-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .header-links a {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .menu-icon {
+        display: block;
+    }
+}
+@media (min-width: 391px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-links {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+#playPauseButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #606060;
+    text-shadow: 0 1px #fff;
+}
+
+#playPauseButton:hover {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+#playPauseButton:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+#playPauseButton:focus {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+
+
+.neo-b {
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #606060;
+    text-shadow: 0 1px #fff;
+}
+
+.neo-b:hover {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+.neo-b:active {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.neo-b:focus {
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+#profileModalToggle {
+    position: fixed;
+    top: 5rem;
+    right: 2rem;
+    z-index: 10000;
+    border-radius: 50%;
+    border: none;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+#profileModalToggleImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+}
+
+/*
+.cursor {
+    color: black;
+    background: white;
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid black;
+    padding: 0.5rem;
+    width: auto;
+    max-width: 120px;
+    font-size: 0.5rem;
+}
+*/
+
+.cursor {
+    font-size: 0.5rem;
+    color: black;
+    max-width: 200px;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 0.5rem;
+    border: 1px solid #0000000d;
+    border-top-left-radius: 0;
+    padding: 0.75rem;
+    background: #ffffff6b;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    word-wrap: break-word;
+    --cursor-before-color: #d9d9d9;
+    z-index: 1000;
+    backdrop-filter: blur(6px);    
+}
+
+
+/*
+.cursor {
+    font-size: 0.5rem;
+    color: black;
+    max-width: 200px;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0;
+    padding: 0.5rem;
+    background: #ffffff;
+    box-shadow: 9px 9px 17px rgba(0, 0, 0, 0.25);
+    display: flex; 
+    align-items: center;
+    gap: 0.5rem; 
+    word-wrap: break-word;
+    --cursor-before-color: #d9d9d9;
+    z-index: 1000;
+}
+*/
+
+
+
+.cursor::before {
+    content: '';
+    position: absolute;
+    top: -7px; /* Position slightly above the cursor */
+    left: -9px; /* Position slightly to the left of the cursor */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--cursor-before-color); /* The color of the triangle */
+    transform: rotate(-45deg);
+}
+
+.cursor img {
+    border-radius: 50%;
+    width: 40px; /* Fixed width for the image */
+    height: 40px; /* Fixed height for the image */
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+.cursor div {
+    line-height: 1; /* Adjust line height for the text */
+}
+
+.cursor-name {
+	color: red;
+	font-weight: bold;
+}
+
+.cursor-desc {
+	color: blue;
+	font-weight: bold;
+}
+
+
+/* Style for the Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 0.55rem;
+    font-weight: bold;
+    font-family: "Moon Regular";
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    position: relative; /* Changed from absolute */
+    top: 50%;
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: min-content;
+    width: 80%; /* Adjust the width */
+    color: black;
+    background: white;
+    display: flex; /* Use flexbox for the content */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    border-radius: 1rem;
+    box-shadow: 0px 2px 2px #00000036;
+    z-index: 2000;
+}
+
+.profile-close {
+    right: 10px;
+    top: 10px;
+}
+
+.profile-close:hover,
+.profile-close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+.profile-close {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+
+
+#profileImgPreview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+#profileForm-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%; /* Take full width of modal-content */
+}
+
+.profile-cards {
+    flex-basis: 40%; /* Use flex-basis for flexible sizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+	padding: 0.25rem 1.5rem;
+    border: 0px solid red;
+}
+
+#save-profile-submit {
+	position: absolute;
+	visibility: hidden;
+}
+
+.profile-label {
+    min-width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+
+.profile-textarea, input[type="text"], input[type="file"] {
+    min-width: 100%;
+    margin-bottom: 0rem;
+    text-align: center;
+    padding: 0.5rem;
+    letter-spacing: 0.25px;
+    border: 0px solid white;
+    background: rgba(0,0,0,0.1);
+    border-radius: 0.25rem;
+}
+
+
+@media (max-width: 600px) {
+    .profile-cards {
+        flex-basis: 80%; /* Take more space on smaller screens */
+    }
+}
+
+
+#description {
+	min-height: 3rem;
+
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+
+
+@keyframes blink-disconnect {
+    0% { border-color: red; }
+    50% { border-color: transparent; }
+    100% { border-color: red; }
+}
+
+.blink {
+    animation: blink-disconnect 1s linear infinite;
+}
+
+
+/* Style for the profile image preview to flash */
+.profile-img-preview {
+    cursor: pointer;
+    display: block;
+    animation: flash 1s infinite;
+}
+
+/* Keyframes for the flashing effect */
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Style for the blinking text */
+.blink {
+    animation: blink-animation 1.5s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1.5s steps(5, start) infinite;
+}
+
+/* Keyframes for the blinking effect */
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+

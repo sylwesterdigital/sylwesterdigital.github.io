@@ -1,0 +1,413 @@
+/* CSS Styles */
+#gallery-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 90%;
+    margin: auto;
+    padding-top: 4rem;
+    justify-items: end;
+}
+
+.gallery-item-wrap {
+
+}
+
+
+.gallery-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    box-shadow: inset 0px 2px 2px 0px #00000094, 0px 1px 0px 0px white;
+    background-size: cover; /* Set background size to cover */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+
+.gallery-item:hover {
+    border-radius: 50% 0;
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    display: none; /* Hide the image element */
+}
+
+.media-title {
+    position: relative;
+    display: block;
+    left: 21%;
+    bottom: -2px;
+    text-align: right;
+    color: black;
+    padding: 5px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 1rem;    
+    width: 141px;
+    text-shadow: 0px 1px 0px #ffffff8f;
+}
+
+.media-title-preview {
+    position: absolute;
+    display: block;
+    /* left: 0; */
+    top: 0rem;
+    /* bottom: -2px; */
+    text-align: right;
+    color: white;
+    /* padding: 5px; */
+    /* border: 1px solid red; */
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 1rem;
+    /* width: 141px; */
+    text-shadow: 0px 1px 0px #ffffff8f;
+}
+
+/* Responsive sizes */
+@media (min-width: 600px) {
+    .gallery-item {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-item {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+
+/* Responsive sizes */
+@media (min-width: 600px) {
+    .gallery-item {
+        width: 200px; /* Larger size on wider screens */
+        height: 200px;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-item {
+        width: 250px; /* Even larger size on larger screens */
+        height: 250px;
+    }
+}
+
+
+#preview-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;    
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and timing as needed */
+}
+
+#preview-content {
+    width: 95%;
+    max-width: 100%; /* or a specific max-width if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#preview-content video {
+    width: 95%;
+    max-height: 85vh;
+    height: auto; /* maintain aspect ratio */
+    box-shadow: 0px 5px 14px 0px #00000094, 0px 1px 0px 0px black;
+}
+
+
+/* ... existing styles ... */
+
+.nav-arrow {
+    font-size: 2rem;
+    position: absolute;
+/*    top: 50%;
+    transform: translateY(-50%);*/
+    margin: 0 1.5rem;
+    /* Adjust size and position as needed */
+}
+
+.left-arrow {
+    left: 0rem;
+}
+
+.right-arrow {
+    right: 0rem;
+}
+
+.close-modal {
+    font-size: 4rem;
+    position: absolute;
+    top: 3rem;
+    cursor: pointer;
+    z-index: auto;
+    transition: transform 0.2s;
+    z-index: 20000;
+}
+
+#close-modal-svg {
+    pointer-events: all;
+    z-index: 20000;
+}
+
+.close-modal:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+.close-modal:active {
+    transform: scale(0.9); /* Slightly reduce size on click */
+}
+
+.pn-b {
+    border-radius: 50%;
+    background: rgba(0,0,0,0.05);
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s; /* Smooth transition for hover and click effects */
+}
+
+.pn-b:hover {
+    background-color: rgba(0,0,0,0.15); /* Darken background on hover */
+}
+
+.pn-b:active {
+    transform: scale(0.9); /* Slightly reduce size on click */
+}
+
+#vocabulary {
+    position: fixed;
+    left: 0;
+    top: 6rem;
+    bottom: 0;
+    overflow-y: auto;
+    width: 180px; /* Adjust the width as needed */
+    box-sizing: border-box;
+    max-height: 94vh; /* Limit the height */
+    z-index: 30000; /* Ensure it's above other content */
+    mix-blend-mode: difference;
+}
+
+#vocabulary button {
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.v-bu {
+    font-size: 0.8rem;
+    background: none;
+    color: #ff3d3d;
+    transition: transform 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform-origin: left center;
+    margin: 0;
+    padding: 0.25rem;
+    line-height: 0;  
+
+}
+
+.v-bu:hover {
+    color: white;
+    transform: scale(1.25);
+    transition: transform 0.5s ease-in-out; /* Faster transition for scaling up */
+    background-color: red;
+    padding: 1rem;
+    margin: 0 -0.5rem;
+    border-radius: 0.2rem;
+}
+
+#keywords-button {
+    position: absolute;
+    pointer-events: all;
+    z-index: 100000;
+    border: none;
+    background: none;
+    width: 3rem;
+    height: 3rem;
+}
+
+#vocabulary-filter {
+    position: relative;
+    top: 4rem;
+    z-index: 1000;
+    margin: 0 auto;
+    pointer-events: all;
+    min-width: 250px!important;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #f7f7f7;
+    border-radius: 20px;
+    box-shadow: inset 0px 3px 4px 0px #0000008a, 0px 1px 0px 0px white;
+    background-color: #f3f3f3;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#vocabulary-filter:focus {
+    position: relative;
+    top: 4rem;
+    z-index: 1000;
+    margin: 0 auto;
+    color: #4CAF50;
+    pointer-events: all;
+    min-width: 250px!important;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #4CAF50;
+    border-radius: 20px;
+    box-shadow: inset 0px 3px 4px 0px #0000008a, 0px 1px 0px 0px white;
+    background-color: #f3f3f3;
+    outline: none;
+    transition: box-shadow 0.3s ease;   
+}
+
+#vocabulary-filter::placeholder {
+    color: #888; /* Placeholder text color */
+    animation: blink 2s step-end infinite; /* Blinking effect */
+}
+
+/* Keyframes for blinking placeholder */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Apply the blinking effect to the placeholder */
+.vocabulary-filter-input::placeholder {
+    animation: blink 1s step-end infinite;
+    color: blue; /* Set the desired placeholder color */
+}
+
+.vocabulary-filter-input {
+    width: 33vw!important;
+}
+
+
+
+
+
+/* Style for the close modal button */
+.close-modal {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom in and out effect */
+.close-modal:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce and rotate effect for the SVG */
+.close-modal:hover #close-modal-svg {
+  animation: bounceRotate 1s ease forwards;
+  fill: red; /* Initial color change to red */
+}
+
+/* Keyframes for bouncing and rotating */
+@keyframes bounceRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+    fill: white; /* Start with white */
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(180deg);
+  }
+  75% {
+    transform: scale(1.2) rotate(270deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    fill: red; /* End with red */
+  }
+}
+
+/* Ensure SVG fill changes smoothly */
+#close-modal-svg {
+  transition: fill 0.3s ease;
+}
+
+
+.nav-arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-arrow:hover {
+    animation: moveLeft 0.5s ease-in-out 2;
+}
+
+.right-arrow:hover {
+    animation: moveRight 0.5s ease-in-out 2;
+}
+
+@keyframes moveLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes moveRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+
+
+
