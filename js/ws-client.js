@@ -360,7 +360,8 @@ function initWS() {
     // const wsUrl = `${wsProtocol}//${hostname}:4444`;
 
     // const wsUrl = 'wss://37.27.5.200:4444'
-    const wsUrl = 'wss://yolo.cx:4444'
+    // const wsUrl = 'wss://yolo.cx:4444'
+    const wsUrl = 'wss://wss.mielniczuk.com';
 
     ws = new WebSocket(wsUrl);
 
