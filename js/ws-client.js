@@ -362,7 +362,7 @@ function initWS() {
     // const wsUrl = 'wss://37.27.5.200:4444'
     // const wsUrl = 'wss://yolo.cx:4444'
     // const wsUrl = 'wss://wss.mielniczuk.com';
-    const wsUrl = 'wss://analytics.mielniczuk.com:4444';
+    const wsUrl = 'wss://analytics.mielniczuk.com/websocket';
 
 
     ws = new WebSocket(wsUrl);
