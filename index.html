@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://archive.mielniczuk.com">
-    <title>Redirecting to archive.mielniczuk.com...</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sylwester Mielniczuk / Mini Portfolio</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
+    <link rel="stylesheet" type="text/css" href="css/gallery.css" />
+    
+    <script defer="" src="https://analytics.mielniczuk.com/script.js" data-website-id="d26116c5-faf1-497b-a66f-8f485ee8ea91"></script>    
+
 </head>
 
-<body>
-    <p>You are being redirected to <a href="https://mielniczuk.com">archive.mielniczuk.com</a></p>
-    <p>If you are not redirected in 0 seconds, <a href="https://archive.mielniczuk.com">click here</a>.</p>
+<body class="loading">
+    
+    <!-- Toggle Button for the Modal -->
+    <canvas id="imageCanvas" width="150" height="150" style="display: none;"></canvas>
+    
+    <div id="profileModalToggle" data-umami-event="profile-modal"><img src="" id="profileModalToggleImage"></div>
+    <!-- Modal for Editing Profile -->
+    
+
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <span class="profile-close" id="profile-close"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" data-umami-event="profile-close">
+                    <g stroke="#292d32" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                        <path d="m12 22c5.5 0 10-4.5 10-10s-4.5-10-10-10-10 4.5-10 10 4.5 10 10 10z" />
+                        <path d="m9.16998 14.83 5.66002-5.65996" />
+                        <path d="m14.83 14.83-5.66002-5.65996" />
+                    </g>
+                </svg>
+            </span>
+            <div id="profileForm-wrap">
+                <form id="profileForm">
+                    <div id="profile-left-card" class="profile-cards">
+                        <label for="profileImage" class="profile-label">Your Profile Image:<br><span class="blink">CLICK TO CHANGE</span></label>
+                        <img id="profileImgPreview" src="" alt="Profile Image" class="profile-img-preview" onclick="document.getElementById('profileImage').click();" data-umami-event="profile-image">
+                        <input type="file" id="profileImage" name="profileImage" accept="image/*" style="display: none;">
+                    </div>
+                    <div id="profile-right-card" class="profile-cards">
+                        <label for="name" class="profile-label">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="description" class="profile-label">Description:</label>
+                        <textarea id="description" class="profile-textarea" name="description" required></textarea>
+                    </div>
+                    <button type="submit" id="save-profile-submit" class="neo-b" data-umami-event="profile-save">Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <button id="playPauseButton">Pause</button>
+    
+    <nav>
+
+        <div class="header-content">
+            <div id="brand">
+                <div id="logo" class="rainbow-gradient"></div>
+                <div id="identity">Mielniczuk / XR</div>
+            </div>
+            <div class="menu-icon">☰</div>
+        </div>
+
+        <div class="header-links" id="header-links">
+            <a href="mailto:sylwester@workwork.fun" class="h-l" data-umami-event="nav-link-email">Email</a>
+            <a href="https://twitter.com/sylwestermiel" target="_blank" class="h-l" data-umami-event="nav-link-twitter">X</a>
+            <a href="https://medium.com/@sylwestermielniczuk" target="_blank" class="h-l" data-umami-event="nav-link-medium">Medium</a>
+            <a href="https://www.linkedin.com/in/extended-realities/" target="_blank" class="h-l" data-umami-event="nav-link-linkedin">In</a>
+            <a href="cv/CreativeTechnologist__Sylwester_Mielniczuk.pdf" target="_blank" class="h-l" data-umami-event="nav-link-cv">CV</a>
+        </div>
+
+    </nav>
+    <script type="module" src="js/bg.js"></script>    
+    <script type="module" src="js/flow-control.js"></script>    
+    <script type="module" src="js/gallery.js"></script>
+    <script type="module" src="js/ws-client.js"></script>
 </body>
 
 </html>

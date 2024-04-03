@@ -353,17 +353,11 @@ function tryReconnect() {
 
 
 function initWS() {
+    const hostname = window.location.hostname;
+    const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    //const wsUrl = `${wsProtocol}//${hostname}:4444`;
 
-    // const hostname = window.location.hostname;
-    
-    // const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-    // const wsUrl = `${wsProtocol}//${hostname}:4444`;
-
-    // const wsUrl = 'wss://37.27.5.200:4444'
-    // const wsUrl = 'wss://yolo.cx:4444'
-    // const wsUrl = 'wss://wss.mielniczuk.com';
-    const wsUrl = 'wss://analytics.mielniczuk.com:4444';
-
+	const wsUrl = 'wss://analytics.mielniczuk.com:4444';
 
 
     ws = new WebSocket(wsUrl);
