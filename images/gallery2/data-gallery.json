@@ -36,6 +36,13 @@
   },
   {
     "type": "youtube",
+    "src": "ETjpWx1cv54",
+    "thumbnail": "video-ETjpWx1cv54/ETjpWx1cv54_thumbnail.webp",
+    "title": "METABOY / MIDAS DEPTH IMAGE AI + STABLE DIFFUSION ART / DEMO\n",
+    "description": "METABOY / MIDAS DEPTH IMAGE AI + STABLE DIFFUSION ART / DEMO \n\nDive deep into a mesmerizing fusion of cutting-edge technology and art. This video showcases the power of METABOY's Midas Depth Image AI seamlessly combined with the enchanting allure of Stable Diffusion Art. Harnessing the limitless potentials of threejs, it elevates visual storytelling by integrating WebXR camera, delivering an immersive experience like never before. Powering the back-end, Flask ensures a robust and fluid interface. But that's not all! Elevating the sensory journey is the rhythmic intensity of a drum and bass track from the acclaimed VENJENT. A confluence of auditory and visual delights, this demo is a testament to the boundless horizons of modern digital artistry. Join us on this unforgettable ride and witness the future of digital entertainment.\n\nLive demo: https://metaboy.tech:5050/\nGitHub repo: https://github.com/Immersive-Collective/xr-midas-threejs\n"
+  },  
+  {
+    "type": "youtube",
     "src": "A_suxXVX_RE",
     "thumbnail": "video-A_suxXVX_RE/A_suxXVX_RE_thumbnail.webp",
     "title": "Teisseire Bastille Day Story Part1 1080x1920 FinalCut\n",
@@ -48,6 +55,20 @@
     "title": "PZL Website / 2005 / Prototyping Editor\n",
     "description": "Flaboy.com Ltd\n\nPrototyping in 2005 website for PZL advertising agency. It was pure creative fun.\nAnd it's still somewhere online!\n\nhttp://mielniczuk.com/pzl/fullscreen.html\n\n(Credits: ARC WW team: Gerda & Dafen)\n"
   },
+   {
+    "type": "youtube",
+    "src": "kjSnoxqLyJc",
+    "thumbnail": "video-kjSnoxqLyJc/kjSnoxqLyJc_thumbnail.webp",
+    "title": "METABOY (Early) - First Code\n",
+    "description": "Introducing Metaboy! 🌟 From the creators of Flaboy.com and Workwork.fun, we now journey into the realm of spatial computing. Diving deep into the post-Oculus era, we're not just chasing shadows; we're redefining them. Get ready for an immersive experience in VR, tailored for your Oculus browser. Powered by ThreeJS, Blender, and the might of JavaScript, brace yourself for some WebGL/WebGPU magic! Let the adventure begin! 🚀 #MetaboyRevolution - https://metaboy.tech\n"
+  },
+  {
+    "type": "youtube",
+    "src": "ljm6Bv4Uey8",
+    "thumbnail": "video-ljm6Bv4Uey8/ljm6Bv4Uey8_thumbnail.webp",
+    "title": "METABOY + RAPIER - Testing Basics of Physics engine\n",
+    "description": "METABOY + RAPIER - Testing Basics of Physics engine?\n\nBTW. Do you like my GLSL Shader (rainbowFragmentShader)?\n\n// Rainbow Vertex Shader\nconst rainbowVertexShader = `\n    varying vec2 vUvRainbow;\n\n    void main() {\n        vUvRainbow = uv;\n        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n    }\n`;\n\n// Rainbow Fragment Shader with a Moving Gradient\nconst rainbowFragmentShader = `\n    uniform float rainbowTime;\n\n    varying vec2 vUvRainbow;\n\n    vec3 rainbowColor(float h) {\n        return clamp( abs( mod(h*6.0+vec3(0.0,4.0,2.0),6.0)-3.0 ) -1.0, 0.0, 1.0 );\n    }\n\n    void main() {\n        float hue = mod(vUvRainbow.y - rainbowTime * 0.99, 1.0);\n        gl_FragColor = vec4(rainbowColor(hue), 1.0);\n    }\n`;\n"
+  }, 
   {
     "type": "youtube",
     "src": "2sKXm20cz6c",
@@ -664,6 +685,13 @@
     "title": "Peugeot 404 (2004) / UI Design, Flash Design, Sounds Design\n",
     "description": "Peugeot 404 Microsite / 2004 / UI Design, Flash Design, Sounds Design\n\nArchived: http://mielniczuk.com/peugeot/407/\n--\nFlaboy.com Ltd\n"
   },
+  {
+    "type": "youtube",
+    "src": "6QKoePygKNA",
+    "thumbnail": "video-6QKoePygKNA/6QKoePygKNA_thumbnail.webp",
+    "title": "WebGL Fluid Simulation / Searching for Fire and Nebula\n",
+    "description": "I have found amazing WebGL repo and playing with some color settings searching for some variants.\n"
+  },  
   {
     "type": "youtube",
     "src": "4o5DaOxcN_M",
@@ -1324,20 +1352,6 @@
   },
   {
     "type": "youtube",
-    "src": "kjSnoxqLyJc",
-    "thumbnail": "video-kjSnoxqLyJc/kjSnoxqLyJc_thumbnail.webp",
-    "title": "METABOY (Early) - First Code\n",
-    "description": "Introducing Metaboy! 🌟 From the creators of Flaboy.com and Workwork.fun, we now journey into the realm of spatial computing. Diving deep into the post-Oculus era, we're not just chasing shadows; we're redefining them. Get ready for an immersive experience in VR, tailored for your Oculus browser. Powered by ThreeJS, Blender, and the might of JavaScript, brace yourself for some WebGL/WebGPU magic! Let the adventure begin! 🚀 #MetaboyRevolution - https://metaboy.tech\n"
-  },
-  {
-    "type": "youtube",
-    "src": "ljm6Bv4Uey8",
-    "thumbnail": "video-ljm6Bv4Uey8/ljm6Bv4Uey8_thumbnail.webp",
-    "title": "METABOY + RAPIER - Testing Basics of Physics engine\n",
-    "description": "METABOY + RAPIER - Testing Basics of Physics engine?\n\nBTW. Do you like my GLSL Shader (rainbowFragmentShader)?\n\n// Rainbow Vertex Shader\nconst rainbowVertexShader = `\n    varying vec2 vUvRainbow;\n\n    void main() {\n        vUvRainbow = uv;\n        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);\n    }\n`;\n\n// Rainbow Fragment Shader with a Moving Gradient\nconst rainbowFragmentShader = `\n    uniform float rainbowTime;\n\n    varying vec2 vUvRainbow;\n\n    vec3 rainbowColor(float h) {\n        return clamp( abs( mod(h*6.0+vec3(0.0,4.0,2.0),6.0)-3.0 ) -1.0, 0.0, 1.0 );\n    }\n\n    void main() {\n        float hue = mod(vUvRainbow.y - rainbowTime * 0.99, 1.0);\n        gl_FragColor = vec4(rainbowColor(hue), 1.0);\n    }\n`;\n"
-  },
-  {
-    "type": "youtube",
     "src": "fNh92IVjwi0",
     "thumbnail": "video-fNh92IVjwi0/fNh92IVjwi0_thumbnail.webp",
     "title": "Metaboy.tech - Demos: EXPLO 1\n",
@@ -1394,13 +1408,6 @@
   },
   {
     "type": "youtube",
-    "src": "ETjpWx1cv54",
-    "thumbnail": "video-ETjpWx1cv54/ETjpWx1cv54_thumbnail.webp",
-    "title": "METABOY / MIDAS DEPTH IMAGE AI + STABLE DIFFUSION ART / DEMO\n",
-    "description": "METABOY / MIDAS DEPTH IMAGE AI + STABLE DIFFUSION ART / DEMO \n\nDive deep into a mesmerizing fusion of cutting-edge technology and art. This video showcases the power of METABOY's Midas Depth Image AI seamlessly combined with the enchanting allure of Stable Diffusion Art. Harnessing the limitless potentials of threejs, it elevates visual storytelling by integrating WebXR camera, delivering an immersive experience like never before. Powering the back-end, Flask ensures a robust and fluid interface. But that's not all! Elevating the sensory journey is the rhythmic intensity of a drum and bass track from the acclaimed VENJENT. A confluence of auditory and visual delights, this demo is a testament to the boundless horizons of modern digital artistry. Join us on this unforgettable ride and witness the future of digital entertainment.\n\nLive demo: https://metaboy.tech:5050/\nGitHub repo: https://github.com/Immersive-Collective/xr-midas-threejs\n"
-  },
-  {
-    "type": "youtube",
     "src": "2WsTKbKtAXA",
     "thumbnail": "video-2WsTKbKtAXA/2WsTKbKtAXA_thumbnail.webp",
     "title": "Introducing YOLO.CX - Unleash Your Creativity\n",
@@ -1412,13 +1419,6 @@
     "thumbnail": "video-ikni_tdgXfc/ikni_tdgXfc_thumbnail.webp",
     "title": "Metaboy: Shot The Monkey: Demo Tests\n",
     "description": "Me playing a simple test WebXR shooting demo, trying to flying a Suzan in the face h*le - https://metaboy.tech/demos/monkey2/ - I just needed to keep this video somehow archived... so here it is.\n"
-  },
-  {
-    "type": "youtube",
-    "src": "6QKoePygKNA",
-    "thumbnail": "video-6QKoePygKNA/6QKoePygKNA_thumbnail.webp",
-    "title": "WebGL Fluid Simulation / Searching for Fire and Nebula\n",
-    "description": "I have found amazing WebGL repo and playing with some color settings searching for some variants.\n"
   },
   {
     "type": "youtube",
