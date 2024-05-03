@@ -1,4 +1,11 @@
 [
+  {
+    "type": "youtube",
+    "src": "EH0DLOgc6Ho",
+    "thumbnail": "video-EH0DLOgc6Ho/EH0DLOgc6Ho_thumbnail.jpg",
+    "title": "Nokia Finnish Christmas // 2009\n",
+    "description": "In 2009 I've build site supporting big Nokia campaign:\n\n\"From our Home in Finland Nokia brings a fun, festive Finnish Christmas to the UK.\"\n\nhttp://www.thefwa.com/site/have-a-finnish-white-christmas\n\n--\nCredits: Wunderman\n\n--\nFlaboy.com Ltd\n"
+  }, 
    {
     "type": "youtube",
     "src": "three-uk-test0001-0589-720p",
@@ -430,7 +437,7 @@
     "type": "youtube",
     "src": "IXvr7nGklhE",
     "thumbnail": "video-IXvr7nGklhE/IXvr7nGklhE_thumbnail.jpg",
-    "title": "FLABOY.COM / ONLINE ADS - ART & DESIGN\n",
+    "title": "FLABOY.COM / ONLINE ADS - ART & DESIGN, Ford, Banners\n",
     "description": "\n"
   },
   {
@@ -501,7 +508,7 @@
     "src": "FdBEj7ensAI",
     "thumbnail": "video-FdBEj7ensAI/FdBEj7ensAI_thumbnail.jpg",
     "title": "Flaboy.com Ltd - Sync ads demo\n",
-    "description": "Flaboy.com Ltd - Sync ads demo developed in Flash ActionScript 3.\n"
+    "description": "Flaboy.com Ltd - Sync ads demo developed in Flash ActionScript 3.\n, Banners"
   },
   {
     "type": "youtube",
@@ -554,13 +561,6 @@
   },
   {
     "type": "youtube",
-    "src": "EH0DLOgc6Ho",
-    "thumbnail": "video-EH0DLOgc6Ho/EH0DLOgc6Ho_thumbnail.jpg",
-    "title": "Nokia Finnish Christmas // 2009\n",
-    "description": "In 2009 I've build site supporting big Nokia campaign:\n\n\"From our Home in Finland Nokia brings a fun, festive Finnish Christmas to the UK.\"\n\nhttp://www.thefwa.com/site/have-a-finnish-white-christmas\n\n--\nCredits: Wunderman\n\n--\nFlaboy.com Ltd\n"
-  },
-  {
-    "type": "youtube",
     "src": "HBOm9d8K88Q",
     "thumbnail": "video-HBOm9d8K88Q/HBOm9d8K88Q_thumbnail.webp",
     "title": "Burrbery MARCH  2013 / SHOT 2\n",
@@ -578,7 +578,7 @@
     "src": "BMwaAb8Yc9Q",
     "thumbnail": "video-BMwaAb8Yc9Q/BMwaAb8Yc9Q_thumbnail.jpg",
     "title": "The Sun / Holidays for £9.50 Promotion / July 2012\n",
-    "description": "The Sun / Holidays for £9.50 Promotion / July 2012.\nSimple motion design stuff for famous UK publishing.\n\n--\nFlaboy.com Ltd\n"
+    "description": "The Sun / Holidays for £9.50 Promotion / July 2012.\nSimple motion design stuff for famous UK publishing.\n\n--\nFlaboy.com Ltd\n, Banners"
   },
   {
     "type": "youtube",
@@ -823,7 +823,7 @@
     "src": "mYg1jx3tw_g",
     "thumbnail": "video-mYg1jx3tw_g/mYg1jx3tw_g_thumbnail.jpg",
     "title": "\"MAX PAYNE\" promo banner - Flash Animation / Nov 2008\n",
-    "description": "\"MAX PAYNE\" promo banner - Flash Animation / Nov 2008\n\n--\n\nFlaboy.com Ltd\n"
+    "description": "\"MAX PAYNE\" promo banner - Flash Animation / Nov 2008\n\n--\n\nFlaboy.com Ltd\n, Banners"
   },
   {
     "type": "youtube",
@@ -831,13 +831,6 @@
     "thumbnail": "video-0MpKoZurCo4/0MpKoZurCo4_thumbnail.jpg",
     "title": "DVDs TO DIE FOR / Nov 2008 - Flash Animation\n",
     "description": "DVDs TO DIE FOR / Nov 2008 - Flash Animation\n\n--\nFlaboy.com Ltd\n"
-  },
-  {
-    "type": "youtube",
-    "src": "1nNHKXmMImI",
-    "thumbnail": "video-1nNHKXmMImI/1nNHKXmMImI_thumbnail.webp",
-    "title": "SWIMMING IN A RIVER\n",
-    "description": "Bantham I love, swimming in a river of Devon is great!\n"
   },
   {
     "type": "youtube",
@@ -1019,7 +1012,7 @@
     "src": "IYauLELk64A",
     "thumbnail": "video-IYauLELk64A/IYauLELk64A_thumbnail.webp",
     "title": "NFL - Display Ad - HTML5\n",
-    "description": "NFL - Display Ad - HTML5 with GSAP (Greensock) and GULP.\nhttps://mielniczuk.com/clients/essenceglobal/Essence-NFL-Display-Ad/dev/NFL_GamePass_Premium_Ad_300x250_V2/dist/\n"
+    "description": "NFL - Display Ad - HTML5 with GSAP (Greensock) and GULP.\nhttps://mielniczuk.com/clients/essenceglobal/Essence-NFL-Display-Ad/dev/NFL_GamePass_Premium_Ad_300x250_V2/dist/\n, Banners"
   },
   {
     "type": "youtube",
@@ -1243,7 +1236,7 @@
     "src": "6ZWpq6AdHt4",
     "thumbnail": "video-6ZWpq6AdHt4/6ZWpq6AdHt4_thumbnail.webp",
     "title": "April 2008 - MTV - Ironman - prototypes\n",
-    "description": "/Users/misiak/Documents/Sites/mielniczuk.com/public/sites/ironman/ironman_side_winders_launcher_char_steer.swf\n"
+    "description": "/Users/misiak/Documents/Sites/mielniczuk.com/public/sites/ironman/ironman_side_winders_launcher_char_steer.swf, Banners\n"
   },
   {
     "type": "youtube",
@@ -1621,14 +1614,14 @@
     "src": "-KZlwea-SIY",
     "thumbnail": "video--KZlwea-SIY/-KZlwea-SIY_thumbnail.webp",
     "title": "XBOX ONE\n",
-    "description": "XBOX ONE ADS\n"
+    "description": "XBOX ONE ADS, Banners\n"
   },
   {
     "type": "youtube",
     "src": "HH1Ez4kkjG4",
     "thumbnail": "video-HH1Ez4kkjG4/HH1Ez4kkjG4_thumbnail.webp",
     "title": "XBOX GEARS OF WAR 4 - NEW SAGA\n",
-    "description": "Just yeat another XBOX ad created for Microsoft\n"
+    "description": "Just yeat another XBOX ad created for Microsoft, Banners\n"
   },
   {
     "type": "youtube",
