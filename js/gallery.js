@@ -132,7 +132,39 @@ const borderRadiusStyles = [
 
 const defaultBorderRadius = '50%'; // Define the default border-radius
 
-// Display the gallery based on filtered or full data
+// // Display the gallery based on filtered or full data
+// function displayGallery(data, galleryPath) {
+//     const wrap = document.getElementById('gallery-wrap') || createGalleryWrap();
+//     wrap.innerHTML = '';
+//     const gallery = document.createElement('div');
+//     gallery.id = 'gallery';
+
+//     data.forEach((item, index) => {
+//         const divWrap = document.createElement('div');
+//         divWrap.className = 'gallery-item-wrap';
+//         divWrap.innerHTML = getMediaHTML(item, galleryPath, false);
+//         divWrap.onclick = () => openPreview(data, index, galleryPath); // Pass current data set
+
+//         const galleryItem = divWrap.querySelector('.gallery-item');
+
+
+//         galleryItem.addEventListener('mouseenter', () => {
+//             const randomStyle = borderRadiusStyles[Math.floor(Math.random() * borderRadiusStyles.length)];
+//             galleryItem.style.borderRadius = randomStyle;
+//             // speakTitle(item.title);
+
+//         });
+
+//         galleryItem.addEventListener('mouseleave', () => {
+//             galleryItem.style.borderRadius = defaultBorderRadius;
+//         });
+
+//         gallery.appendChild(divWrap);
+//     });
+
+//     wrap.appendChild(gallery);
+// }
+
 function displayGallery(data, galleryPath) {
     const wrap = document.getElementById('gallery-wrap') || createGalleryWrap();
     wrap.innerHTML = '';
@@ -147,12 +179,9 @@ function displayGallery(data, galleryPath) {
 
         const galleryItem = divWrap.querySelector('.gallery-item');
 
-
         galleryItem.addEventListener('mouseenter', () => {
             const randomStyle = borderRadiusStyles[Math.floor(Math.random() * borderRadiusStyles.length)];
             galleryItem.style.borderRadius = randomStyle;
-            // speakTitle(item.title);
-
         });
 
         galleryItem.addEventListener('mouseleave', () => {
@@ -163,22 +192,56 @@ function displayGallery(data, galleryPath) {
     });
 
     wrap.appendChild(gallery);
+    initializeLazyLoad('gallery');
 }
 
-
-
-
-
-
-// Generate HTML for media item
 function getMediaHTML(item, basePath, isPreview) {
     let thumbnailPath = item.thumbnail ? `${basePath}${item.thumbnail}` : '';
     if (isPreview) {
         return `<video controls autoplay><source src="${basePath}video-${item.src}/${item.src}.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="media-title-preview">${item.title}</div>`;
     } else {
-        return `<div class="gallery-item" style="background-image: url('${thumbnailPath}')"></div><div class="media-title">${item.title}</div>`;
+        return `<div class="gallery-item" data-src="${thumbnailPath}" style="background-image: url('')"></div><div class="media-title">${item.title}</div>`;
     }
 }
+
+function initializeLazyLoad(containerId) {
+    const galleryContainer = document.getElementById(containerId);
+    if (!galleryContainer) return;
+
+    const images = galleryContainer.querySelectorAll('.gallery-item[data-src]');
+    const config = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, self) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const div = entry.target;
+                div.style.backgroundImage = `url('${div.dataset.src}')`;
+                div.removeAttribute('data-src');
+                self.unobserve(div);
+            }
+        });
+    }, config);
+
+    images.forEach(image => {
+        observer.observe(image);
+    });
+}
+
+
+
+// Generate HTML for media item
+// function getMediaHTML(item, basePath, isPreview) {
+//     let thumbnailPath = item.thumbnail ? `${basePath}${item.thumbnail}` : '';
+//     if (isPreview) {
+//         return `<video controls autoplay><source src="${basePath}video-${item.src}/${item.src}.mp4" type="video/mp4">Your browser does not support the video tag.</video><div class="media-title-preview">${item.title}</div>`;
+//     } else {
+//         return `<div class="gallery-item" style="background-image: url('${thumbnailPath}')"></div><div class="media-title">${item.title}</div>`;
+//     }
+// }
 
 
 // Open preview modal for a selected item
