@@ -10,8 +10,22 @@
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
     <link rel="stylesheet" type="text/css" href="css/gallery.css" />
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                var script = document.createElement('script');
+                script.defer = true;
+                script.src = "https://analytics.mielniczuk.com/script.js";
+                script.setAttribute('data-website-id', 'd26116c5-faf1-497b-a66f-8f485ee8ea91');
+                document.head.appendChild(script);
+            } catch (error) {
+                console.error('Analytics script failed to load', error);
+            }
+        });
+    </script>
     
-    <script defer="" src="https://analytics.mielniczuk.com/script.js" data-website-id="d26116c5-faf1-497b-a66f-8f485ee8ea91"></script>    
+<!--     <script defer="" src="https://analytics.mielniczuk.com/script.js" data-website-id="d26116c5-faf1-497b-a66f-8f485ee8ea91"></script> -->    
 
 </head>
 
