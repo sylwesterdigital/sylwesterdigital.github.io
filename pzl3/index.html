@@ -16,25 +16,24 @@
             background-color: #000;
         }
         .video-container {
+            position: relative;
             width: 100%;
-            max-width: 100vw;
-            height: 100%;
-            max-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
         }
         iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            max-width: 560px;
-            max-height: 315px;
+            border: none;
         }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/2sKXm20cz6c?si=nX34b2Sacj8cp8_O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/2sKXm20cz6c?si=nX34b2Sacj8cp8_O" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 </body>
 </html>
