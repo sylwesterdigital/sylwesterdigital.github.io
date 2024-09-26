@@ -1,6 +1,13 @@
 [
   {
     "type": "youtube",
+    "src": "haloglasses",
+    "thumbnail": "video-haloglasses/haloglasses.webp",
+    "title": "Nokia Finnish Christmas // 2009\n",
+    "description": "Just having fun with AI"
+  },   
+  {
+    "type": "youtube",
     "src": "EH0DLOgc6Ho",
     "thumbnail": "video-EH0DLOgc6Ho/EH0DLOgc6Ho_thumbnail.jpg",
     "title": "Nokia Finnish Christmas // 2009\n",
