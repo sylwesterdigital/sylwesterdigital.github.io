@@ -1,9 +1,30 @@
 [
   {
     "type": "youtube",
+    "src": "samsung-ai1",
+    "thumbnail": "video-samsung-ai1/samsung-ai1.mov.webp",
+    "title": "Samsung AI - 1",
+    "description": "Galaxy S25 - Gemini AI - 1/3"
+  },   
+  {
+    "type": "youtube",
+    "src": "samsung-ai2",
+    "thumbnail": "video-samsung-ai2/samsung-ai2.mov.webp",
+    "title": "Samsung AI - 2",
+    "description": "Galaxy S25 - Gemini AI - 2/3"
+  },   
+  {
+    "type": "youtube",
+    "src": "samsung-ai3",
+    "thumbnail": "video-samsung-ai3/samsung-ai3.mov.webp",
+    "title": "Samsung AI - 3",
+    "description": "Galaxy S25 - Gemini AI - 3/3"
+  },   
+  {
+    "type": "youtube",
     "src": "haloglasses",
     "thumbnail": "video-haloglasses/haloglasses.webp",
-    "title": "Halo Glasses! // 2024\n",
+    "title": "Gen AI // 2024\n",
     "description": "Just having fun with AI"
   },   
   {
