@@ -1,6 +1,13 @@
 [
   {
     "type": "youtube",
+    "src": "pgl",
+    "thumbnail": "video-pgl/pgl.webp",
+    "title": "PGL",
+    "description": "Fun filled kids’ adventure holidays! https://ad-previews.seenthis.co/play/sToG4pvPF.1:a3a6eb87151741e0eff175d0b695f96f64b4a0a61c3ac2e7705e36f9d3b5c954/r2o5U8vpf/ad"
+  }, 
+  {
+    "type": "youtube",
     "src": "samsung-ai1",
     "thumbnail": "video-samsung-ai1/samsung-ai1.mov.webp",
     "title": "Samsung AI - 1",
