@@ -1,6 +1,62 @@
 [
   {
     "type": "youtube",
+    "src": "jbc",
+    "thumbnail": "video-jbc/jbc.gif",
+    "title": "JBC - BORN TO WIN",
+    "description": "JBC - https://ad-previews.seenthis.co/play/Pz2vR5qWo.0:f4728d59111ab3a7f3d55061eab7927dc97919743b96701f1c960e1aec7c58eb"
+  },
+  {
+    "type": "youtube",
+    "src": "telenet",
+    "thumbnail": "video-telenet/telenet.gif",
+    "title": "TELENET",
+    "description": "TELENET - https://ad-previews.seenthis.co/play/93TDI48AB.0:b7f4cdf054ac1d046953e703f9fc955054ce520cc24732bf801dd93bf0900828"
+  },  
+  {
+    "type": "youtube",
+    "src": "byd",
+    "thumbnail": "video-byd/byd.gif",
+    "title": "BYD SEALION7",
+    "description": "BYD SEALION7 - https://ad-previews.seenthis.co/play/yAfhU0jHF.0:398af9cb96aae7660e56d7a1996df9120e5a5656e90f51f6434ca340db0df9db"
+  },
+  {
+    "type": "youtube",
+    "src": "jamiexx",
+    "thumbnail": "video-jamiexx/jamiexx.gif",
+    "title": "JAMIEXX",
+    "description": "JAMIEXX - https://ad-previews.seenthis.co/play/WD8UCooY3.0:f44be844186a56115f7681463878a6d08872490b0d7142cfd14cae97a79977c2"
+  },
+  {
+    "type": "youtube",
+    "src": "tadam",
+    "thumbnail": "video-tadam/tadam.gif",
+    "title": "TADAAM",
+    "description": "TADAAM INTERNET - https://ad-previews.seenthis.co/play/3o5zS-9OO.0:ff231808800432dac1efd452ad7a47bdfbe5f7dfd12ec7a9a97b96aabeeffccf"
+  },
+  {
+    "type": "youtube",
+    "src": "fordcapri",
+    "thumbnail": "video-fordcapri/fordcapri.gif",
+    "title": "Ford Capri",
+    "description": "Ford Capri Mock  - https://ad-previews.seenthis.co/play/z5rBHViPG.0:831ff1369ceb9faca64999c0e2ba4524a695d860ae302e5206367a9f7e449ad0"
+  }, 
+  {
+    "type": "youtube",
+    "src": "northface",
+    "thumbnail": "video-northface/northface.gif",
+    "title": "Northface",
+    "description": "Northface Mock  - https://ad-previews.seenthis.co/play/2j_gnLue9.0:7c22e83918b98671c7ca20c70c6d9909a280402878b6638c3228f19cacd352d0"
+  },
+  {
+    "type": "youtube",
+    "src": "adidasgolf",
+    "thumbnail": "video-adidasgolf/adidasgolf.gif",
+    "title": "Adidas Golf",
+    "description": "Northface Mock  - https://ad-previews.seenthis.co/play/2j_gnLue9.0:7c22e83918b98671c7ca20c70c6d9909a280402878b6638c3228f19cacd352d0"
+  },    
+  {
+    "type": "youtube",
     "src": "IWC",
     "thumbnail": "video-iwc/iwc.gif",
     "title": "IWC",
@@ -16,77 +72,91 @@
   {
     "type": "youtube",
     "src": "pgl",
-    "thumbnail": "video-pgl/pgl.webp",
+    "thumbnail": "video-pgl/pgl.gif",
     "title": "PGL",
     "description": "Fun filled kids’ adventure holidays! https://ad-previews.seenthis.co/play/sToG4pvPF.1:a3a6eb87151741e0eff175d0b695f96f64b4a0a61c3ac2e7705e36f9d3b5c954/r2o5U8vpf/ad"
-  }, 
+  },
+  {
+    "type": "youtube",
+    "src": "rcmsaga",
+    "thumbnail": "video-rcmsaga/rcmsaga.gif",
+    "title": "RCM Saga",
+    "description": "RCM Saga - https://ad-previews.seenthis.co/play/RMeze4AS-.0:9897d92cf9eda2ca35158bf26c2ccb56b450a5ea1dabaed80a34d3e957d29d8f"
+  },    
   {
     "type": "youtube",
     "src": "samsung-ai1",
-    "thumbnail": "video-samsung-ai1/samsung-ai1.mov.webp",
+    "thumbnail": "video-samsung-ai1/samsung-ai1.gif",
     "title": "Samsung AI - 1",
     "description": "Galaxy S25 - Gemini AI - 1/3 - https://ad-previews.seenthis.co/play/FP0H7v_A8.0:78059ce9d2de27df8b6832a066ff75168d5188b4fb447fdf9bb0f698cc1d143c"
   },   
   {
     "type": "youtube",
     "src": "samsung-ai2",
-    "thumbnail": "video-samsung-ai2/samsung-ai2.mov.webp",
+    "thumbnail": "video-samsung-ai2/samsung-ai2.gif",
     "title": "Samsung AI - 2",
     "description": "Galaxy S25 - Gemini AI - 2/3 - https://ad-previews.seenthis.co/play/FP0H7v_A8.0:78059ce9d2de27df8b6832a066ff75168d5188b4fb447fdf9bb0f698cc1d143c"
   },   
   {
     "type": "youtube",
     "src": "samsung-ai3",
-    "thumbnail": "video-samsung-ai3/samsung-ai3.mov.webp",
+    "thumbnail": "video-samsung-ai3/samsung-ai3.gif",
     "title": "Samsung AI - 3",
     "description": "Galaxy S25 - Gemini AI - 3/3 - https://ad-previews.seenthis.co/play/FP0H7v_A8.0:78059ce9d2de27df8b6832a066ff75168d5188b4fb447fdf9bb0f698cc1d143c"
   }, 
   {
     "type": "youtube",
     "src": "samsung-ai0",
-    "thumbnail": "video-samsung-ai0/samsung-ai0.webp",
+    "thumbnail": "video-samsung-ai0/samsung-ai0.gif",
     "title": "Samsung AI - Pitch",
     "description": "Galaxy S25 - Gemini AI - Pitch - https://ad-previews.seenthis.co/play/R3Q-wqxVd.0:20beadc30da082d1f0749bd304efa4f2cb6e8dce06aad7ba73a3239c951c9294/mhqO44Gdli/ad"
   },     
   {
     "type": "youtube",
     "src": "haloglasses",
-    "thumbnail": "video-haloglasses/haloglasses.webp",
+    "thumbnail": "video-haloglasses/haloglasses.gif",
     "title": "Gen AI // 2024\n",
     "description": "Just having fun with AI"
   },   
   {
     "type": "youtube",
+    "src": "lucozade",
+    "thumbnail": "video-lucozade/lucozade.gif",
+    "title": "Lucozade",
+    "description": "Lucozade  - https://ad-previews.seenthis.co/play/AV1hhDRBD.0:7ad92c2936cb8b5b95963cb1ce071e1c4bf29079336fe8fe01d2faa92ac4ddbc"
+  },
+  {
+    "type": "youtube",
     "src": "EH0DLOgc6Ho",
-    "thumbnail": "video-EH0DLOgc6Ho/EH0DLOgc6Ho_thumbnail.jpg",
+    "thumbnail": "video-EH0DLOgc6Ho/EH0DLOgc6Ho.gif",
     "title": "Nokia Finnish Christmas // 2009\n",
     "description": "In 2009 I've build site supporting big Nokia campaign:\n\n\"From our Home in Finland Nokia brings a fun, festive Finnish Christmas to the UK.\"\n\nhttp://www.thefwa.com/site/have-a-finnish-white-christmas\n\n--\nCredits: Wunderman\n\n--\nFlaboy.com Ltd\n"
   }, 
    {
     "type": "youtube",
     "src": "three-uk-test0001-0589-720p",
-    "thumbnail": "video-three-uk-test0001-0589-720p/three-uk-test0001-0589-720p.jpg",
+    "thumbnail": "video-three-uk-test0001-0589-720p/three-uk-test0001-0589-720p.gif",
     "title": "Three.co.uk - Animals",
     "description": "Three.co.uk - Animals\n"
   }, 
   {
     "type": "youtube",
     "src": "mbrECnmICDE",
-    "thumbnail": "video-mbrECnmICDE/mbrECnmICDE_thumbnail.webp",
+    "thumbnail": "video-mbrECnmICDE/mbrECnmICDE.gif",
     "title": "VR - 007 RTAM - Preview\n",
     "description": "VR - 007 RTAM - Preview, WebXR API, 3D World, Oculus Quest Browser\n"
   },
   {
     "type": "youtube",
     "src": "RTm4Iw_ZRnA",
-    "thumbnail": "video-RTm4Iw_ZRnA/RTm4Iw_ZRnA_thumbnail.webp",
+    "thumbnail": "video-RTm4Iw_ZRnA/RTm4Iw_ZRnA.gif",
     "title": "UC1a -  Controller Attached HUD\n",
     "description": "UC1a -  Controller Attached HUD\n"
   },
   {
     "type": "youtube",
     "src": "aRBkjrzGcGw",
-    "thumbnail": "video-aRBkjrzGcGw/aRBkjrzGcGw_thumbnail.jpg",
+    "thumbnail": "video-aRBkjrzGcGw/aRBkjrzGcGw.gif",
     "title": "SYLWESTER DIGITAL DESIGN\n",
     "description": "Flaboy Portfolio 2006-2008. This is website I have built in one week in 2006 (7 years ago) to present my works. It's still simple and there are few hidden things user have to find out. It's been designed and built in AS2 and I'm going to replace this Portfolio 2006 with new one int upcoming months. \n\n\nhttp://flaboy.com/folio2/\n--\nFlaboy.com Ltd\n"
   },
