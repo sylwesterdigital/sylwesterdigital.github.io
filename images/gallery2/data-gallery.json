@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "yolocxface3d",
+    "thumbnail": "video-yolocxface3d/yolocxface3d.gif",
+    "title": "3D Face ID",
+    "description": "Yolo.cx - Open Web Metaverse Builder"
+},  
+{
+    "type": "youtube",
     "src": "iwc",
     "thumbnail": "video-iwc/iwc.gif",
     "title": "iwc",
