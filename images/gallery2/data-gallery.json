@@ -1,7 +1,21 @@
 [
 {
     "type": "youtube",
-    "src": "yolocxface3d",
+    "src": "studio333art",
+    "thumbnail": "video-studio333art/studio333art.gif",
+    "title": "Studio333",
+    "description": "Muzak for Studio333.art"
+},
+{
+    "type": "youtube",
+    "src": "amazing",
+    "thumbnail": "video-amazing/amazing.gif",
+    "title": "Monaco Editor",
+    "description": "Mondaco Editor"
+},  
+{
+    "type": "youtube",
+    "src": "amazing",
     "thumbnail": "video-yolocxface3d/yolocxface3d.gif",
     "title": "3D Face ID",
     "description": "Yolo.cx - Open Web Metaverse Builder"
