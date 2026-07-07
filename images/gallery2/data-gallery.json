@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "streetfighter",
+    "thumbnail": "video-streetfighter/streetfighter.gif",
+    "title": "Street Fighter",
+    "description": "Street Fighter"
+},
+{
+    "type": "youtube",
     "src": "popcorn",
     "thumbnail": "video-popcorn/popcorn.gif",
     "title": "Popcorn",
