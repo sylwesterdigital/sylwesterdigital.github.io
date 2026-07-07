@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "angrybirds",
+    "thumbnail": "video-angrybirds/angrybirds.gif",
+    "title": "Angry Birds",
+    "description": "Angry Birds"
+},
+{
+    "type": "youtube",
     "src": "streetfighter",
     "thumbnail": "video-streetfighter/streetfighter.gif",
     "title": "Street Fighter",
