@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "pinball",
+    "thumbnail": "video-pinball/pinball.gif",
+    "title": "Pinball",
+    "description": "Pinball XR"
+},
+{
+    "type": "youtube",
     "src": "angrybirds",
     "thumbnail": "video-angrybirds/angrybirds.gif",
     "title": "Angry Birds",
