@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "mojoworksxyz",
+    "thumbnail": "video-mojoworksxyz/mojoworksxyz.gif",
+    "title": "MojoworksXYZ",
+    "description": "Mojoworks.XYZ"
+},
+{
+    "type": "youtube",
     "src": "ghost",
     "thumbnail": "video-ghost/ghost.gif",
     "title": "Ghost",
