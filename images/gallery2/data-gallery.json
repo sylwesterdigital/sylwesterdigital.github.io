@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "tinyworlds",
+    "thumbnail": "video-tinyworlds/tinyworlds.gif",
+    "title": "Tinyworlds",
+    "description": "Tinyworlds"
+},
+{
+    "type": "youtube",
     "src": "pinball",
     "thumbnail": "video-pinball/pinball.gif",
     "title": "Pinball",
