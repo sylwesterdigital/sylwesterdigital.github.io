@@ -1,11 +1,26 @@
 [
 {
     "type": "youtube",
+    "src": "popcorn",
+    "thumbnail": "video-popcorn/popcorn.gif",
+    "title": "Popcorn",
+    "description": "Popcorn"
+},
+{
+    "type": "youtube",
+    "src": "technoxr",
+    "thumbnail": "video-technoxr/technoxr.gif",
+    "title": "Techno XR",
+    "description": "Techno XR"
+},
+{
+    "type": "youtube",
     "src": "orion2",
     "thumbnail": "video-orion2/orion2.gif",
     "title": "Orion 2",
     "description": "Artemis II - Orion Tracker"
-},{
+},
+{
     "type": "youtube",
     "src": "mojoworksxyz",
     "thumbnail": "video-mojoworksxyz/mojoworksxyz.gif",
