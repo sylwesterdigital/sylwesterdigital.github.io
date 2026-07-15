@@ -1,6 +1,13 @@
 [
 {
     "type": "youtube",
+    "src": "cut",
+    "thumbnail": "video-cut/cut.gif",
+    "title": "CUT",
+    "description": "CUT"
+},
+{
+    "type": "youtube",
     "src": "tinyworlds",
     "thumbnail": "video-tinyworlds/tinyworlds.gif",
     "title": "Tinyworlds",
