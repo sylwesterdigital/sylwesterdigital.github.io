@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Sylwester Mielniczuk — senior motion designer, creative technologist and media developer in London.">
+  <meta name="theme-color" content="#f2efe8">
+  <title>Sylwester Mielniczuk — Motion / Design / Media / Code</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <style>
+    :root {
+      --paper: #f2efe8;
+      --ink: #0b0b0b;
+      --muted: #78746c;
+      --line: rgba(11,11,11,.22);
+      --accent: #ff4b18;
+      --media-bg: #d8d4cb;
+      --chip: rgba(242,239,232,.92);
+      --placeholder: #aaa59c;
+      --pad: clamp(18px, 2.35vw, 40px);
+      --gutter: clamp(14px, 1.45vw, 24px);
+      --display: Arial, Helvetica, sans-serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+
+    html[data-theme="oxide"] {
+      --paper: #c93623;
+      --ink: #f5efe4;
+      --muted: #f0beb3;
+      --line: rgba(245,239,228,.27);
+      --accent: #121212;
+      --media-bg: #9f2518;
+      --chip: rgba(245,239,228,.92);
+      --placeholder: #efb8ae;
+    }
+
+    html[data-theme="cobalt"] {
+      --paper: #1649ff;
+      --ink: #f8f3e8;
+      --muted: #c7d3ff;
+      --line: rgba(248,243,232,.28);
+      --accent: #fff04a;
+      --media-bg: #0d37c7;
+      --chip: rgba(248,243,232,.93);
+      --placeholder: #aebeff;
+    }
+
+    html[data-theme="acid"] {
+      --paper: #d8ff42;
+      --ink: #101010;
+      --muted: #50582b;
+      --line: rgba(16,16,16,.24);
+      --accent: #ff4775;
+      --media-bg: #b9d92e;
+      --chip: rgba(16,16,16,.92);
+      --placeholder: #758038;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); color: var(--ink); }
+    body { margin: 0; font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; }
+    html, body, .topbar, .archive-tools, .contact, .section, .hero, .load-more, .theme-switcher {
+      transition: background-color .58s cubic-bezier(.2,.7,.15,1), color .58s cubic-bezier(.2,.7,.15,1), border-color .58s cubic-bezier(.2,.7,.15,1);
+    }
+    .hero__dot, .theme-swatch { transition: background-color .58s cubic-bezier(.2,.7,.15,1), transform .25s ease, border-color .3s ease; }
+    .hero h1 .outline { transition: -webkit-text-stroke-color .58s cubic-bezier(.2,.7,.15,1); }
+    body.modal-open { overflow: hidden; }
+    button, input, a { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; width: 100%; }
+    button { color: inherit; }
+
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+      min-height: 72px;
+      padding: 14px var(--pad);
+      background: color-mix(in srgb, var(--paper) 90%, transparent);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .wordmark {
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .topbar__meta {
+      font-size: 12px;
+      line-height: 1.2;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    .topbar__links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .topbar a { position: relative; }
+    .topbar a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -4px;
+      height: 1px;
+      background: currentColor;
+      transition: right .25s ease;
+    }
+    .topbar a:hover::after { right: 0; }
+
+    .hero {
+      min-height: calc(100svh - 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(34px, 5.5vw, 94px) var(--pad) var(--pad);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 780px;
+      font-size: clamp(15px, 1.5vw, 22px);
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+    .hero__dot {
+      width: .7em;
+      height: .7em;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      margin: .11em 0 .06em;
+      max-width: 1500px;
+      font-family: var(--display);
+      font-size: clamp(72px, 13.8vw, 246px);
+      font-weight: 800;
+      line-height: .78;
+      letter-spacing: -.075em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span { display: block; }
+    .hero h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: max(1px, .012em) var(--ink);
+      text-stroke: max(1px, .012em) var(--ink);
+    }
+
+    .hero__bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      align-items: end;
+      gap: clamp(28px, 7vw, 120px);
+      margin-top: clamp(40px, 7vw, 120px);
+    }
+
+    .hero__statement {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(28px, 4.25vw, 70px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 700;
+    }
+
+    .hero__small {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+      font-size: clamp(15px, 1.25vw, 20px);
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+
+    .section {
+      padding: clamp(70px, 9vw, 150px) var(--pad);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: var(--gutter);
+      align-items: start;
+      margin-bottom: clamp(34px, 5vw, 80px);
+    }
+
+    .kicker {
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    .section-title {
+      margin: 0;
+      max-width: 1080px;
+      font-size: clamp(44px, 7.2vw, 124px);
+      line-height: .92;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(40px, 6vw, 105px) var(--gutter);
+    }
+
+    .project { grid-column: span 6; min-width: 0; }
+    .project--wide { grid-column: 1 / -1; }
+    .project--offset { grid-column: 4 / span 8; }
+
+    .project__media {
+      position: relative;
+      overflow: hidden;
+      background: var(--media-bg);
+      aspect-ratio: 4 / 3;
+      cursor: pointer;
+    }
+    .project--wide .project__media { aspect-ratio: 16 / 8.7; }
+    .project--offset .project__media { aspect-ratio: 16 / 10; }
+
+    .project__media video,
+    .project__media img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s cubic-bezier(.2,.7,.15,1), filter .4s ease;
+    }
+    .project__media img { z-index: 0; }
+    .project__media video { z-index: 1; background: #111; }
+    .project__media:hover video,
+    .project__media:hover img { transform: scale(1.018); }
+
+    .project__badge {
+      position: absolute;
+      z-index: 2;
+      top: 14px;
+      left: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--chip);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      backdrop-filter: blur(8px);
+    }
+    html[data-theme="acid"] .project__badge { color: var(--paper); }
+    html[data-theme="oxide"] .project__badge,
+    html[data-theme="cobalt"] .project__badge { color: #101010; }
+
+    .project__body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(180px, .6fr);
+      gap: 20px;
+      padding-top: 15px;
+      border-top: 1px solid var(--ink);
+      margin-top: 12px;
+    }
+
+    .project__title {
+      margin: 0;
+      font-size: clamp(26px, 3.3vw, 56px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      font-weight: 800;
+    }
+    .project__copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gutter);
+      align-items: start;
+    }
+    .manifesto__big {
+      margin: 0;
+      font-size: clamp(46px, 7vw, 118px);
+      line-height: .9;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+    .manifesto__copy {
+      max-width: 680px;
+      margin: .25em 0 0;
+      font-size: clamp(20px, 2.2vw, 34px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .manifesto__copy + .manifesto__copy { margin-top: 1em; }
+    .manifesto__copy.small {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: clamp(15px, 1.4vw, 20px);
+      line-height: 1.4;
+      letter-spacing: -.015em;
+    }
+
+    .archive-tools {
+      position: sticky;
+      top: 72px;
+      z-index: 15;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 12px 0;
+      margin-bottom: 20px;
+      background: color-mix(in srgb, var(--paper) 91%, transparent);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .archive-search {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: clamp(22px, 2.9vw, 44px);
+      line-height: 1;
+      letter-spacing: -.04em;
+      font-weight: 700;
+    }
+    .archive-search::placeholder { color: var(--placeholder); opacity: 1; }
+    .archive-count {
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px var(--gutter);
+    }
+
+    .archive-card {
+      min-width: 0;
+      cursor: pointer;
+    }
+    .archive-card__media {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--media-bg);
+    }
+    .archive-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.9);
+      transition: transform .45s ease, filter .45s ease;
+    }
+    .archive-card:hover img { transform: scale(1.025); filter: saturate(1.08); }
+    .archive-card__title {
+      margin: 9px 0 0;
+      font-size: clamp(14px, 1.25vw, 18px);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      font-weight: 700;
+    }
+    .archive-card__meta {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.25;
+    }
+
+    .load-more {
+      display: block;
+      margin: clamp(38px, 6vw, 80px) auto 0;
+      min-width: 220px;
+      padding: 15px 24px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background .2s ease, color .2s ease;
+    }
+    .load-more:hover { background: var(--ink); color: var(--paper); }
+
+    .contact {
+      min-height: 75svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(70px, 9vw, 150px) var(--pad) var(--pad);
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .contact h2 {
+      margin: 0;
+      max-width: 1400px;
+      font-size: clamp(58px, 11vw, 190px);
+      line-height: .82;
+      letter-spacing: -.075em;
+      text-transform: uppercase;
+    }
+    .contact__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gutter);
+      align-items: end;
+      margin-top: 80px;
+    }
+    .contact__mail {
+      font-size: clamp(25px, 4vw, 64px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: .13em;
+    }
+    .contact__links {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      font-size: 13px;
+    }
+
+    .theme-switcher {
+      position: fixed;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 9px 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      color: var(--ink);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 34px rgba(0,0,0,.08);
+    }
+    .theme-switcher__label {
+      margin-right: 2px;
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .theme-swatch {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+    .theme-swatch:hover { transform: scale(1.13); }
+    .theme-swatch[aria-pressed="true"] {
+      transform: scale(1.16);
+      box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink);
+    }
+    .theme-swatch[data-set-theme="paper"] { background: linear-gradient(135deg, #f2efe8 0 48%, #ff4b18 48% 66%, #0b0b0b 66%); }
+    .theme-swatch[data-set-theme="oxide"] { background: linear-gradient(135deg, #c93623 0 63%, #f5efe4 63%); }
+    .theme-swatch[data-set-theme="cobalt"] { background: linear-gradient(135deg, #1649ff 0 63%, #fff04a 63%); }
+    .theme-swatch[data-set-theme="acid"] { background: linear-gradient(135deg, #d8ff42 0 63%, #ff4775 63%); }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      grid-template-columns: minmax(0, 1.35fr) minmax(310px, .65fr);
+      background: #050505;
+      color: #fff;
+    }
+    .modal.is-open { display: grid; }
+    .modal__media {
+      min-width: 0;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      overflow: hidden;
+    }
+    .modal__media video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+    .modal__video-error {
+      position: absolute;
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
+    .modal__aside {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border-left: 1px solid rgba(255,255,255,.22);
+      overflow: auto;
+    }
+    .modal__close {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .modal__kicker {
+      margin: 0 54px 70px 0;
+      color: #999;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .modal__title {
+      margin: 0;
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
+    .modal__desc {
+      margin: 28px 0 0;
+      color: #bdbdbd;
+      font-size: 14px;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+    .modal__links { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .modal__links a {
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .modal__nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 55px;
+    }
+    .modal__nav button {
+      flex: 1;
+      padding: 13px 12px;
+      border: 1px solid rgba(255,255,255,.3);
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .75s ease, transform .75s cubic-bezier(.2,.7,.15,1);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    .noscript {
+      padding: 30px var(--pad);
+      background: #ffdf00;
+      color: #111;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .topbar { grid-template-columns: 1fr auto; }
+      .topbar__meta { display: none; }
+      .hero { min-height: auto; }
+      .hero h1 { font-size: clamp(64px, 18vw, 150px); }
+      .hero__bottom,
+      .section-head,
+      .manifesto,
+      .contact__row { grid-template-columns: 1fr; }
+      .project,
+      .project--offset,
+      .project--wide { grid-column: 1 / -1; }
+      .project__body { grid-template-columns: 1fr; }
+      .archive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact__links { justify-content: flex-start; }
+      .modal { grid-template-columns: 1fr; grid-template-rows: 58svh 42svh; }
+      .modal__aside { border-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
+    }
+
+    @media (max-width: 560px) {
+      .topbar__links a:nth-child(2) { display: none; }
+      .hero { padding-top: 36px; }
+      .hero h1 { font-size: clamp(58px, 19vw, 96px); }
+      .hero__statement { font-size: clamp(31px, 10vw, 52px); }
+      .project--wide .project__media,
+      .project--offset .project__media,
+      .project__media { aspect-ratio: 4 / 3; }
+      .archive-grid { grid-template-columns: 1fr; }
+      .archive-tools { grid-template-columns: 1fr; }
+      .archive-count { display: none; }
+      .contact__mail { overflow-wrap: anywhere; }
+      .modal { grid-template-rows: 48svh 52svh; }
+      .modal__aside { padding: 20px; }
+      .modal__title { font-size: 40px; }
+    }
+
+    @media (max-width: 560px) {
+      .theme-switcher { right: 10px; bottom: 10px; padding: 7px; gap: 6px; }
+      .theme-switcher__label { display: none; }
+      .theme-swatch { width: 19px; height: 19px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+
+  <script>
+    document.documentElement.classList.remove('no-js');
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const script = document.createElement('script');
+        script.defer = true;
+        script.src = 'https://analytics.mielniczuk.com/script.js';
+        script.setAttribute('data-website-id', 'd26116c5-faf1-497b-a66f-8f485ee8ea91');
+        document.head.appendChild(script);
+      } catch (_) {}
+    });
+  </script>
+</head>
+
+<body>
+  <noscript><div class="noscript">This portfolio uses JavaScript to load the project archive.</div></noscript>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="Back to top">Sylwester Mielniczuk</a>
+    <div class="topbar__meta">London · Motion / Design / Media / Code</div>
+    <nav class="topbar__links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#archive">Archive</a>
+      <a href="mailto:sylwester@workwork.fun">Email</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__eyebrow reveal">
+        <span class="hero__dot" aria-hidden="true"></span>
+        Senior motion designer, creative technologist and media developer.
+      </div>
+
+      <h1 class="reveal" aria-label="Design motion media code">
+        <span>Design</span>
+        <span class="outline">Motion</span>
+        <span>Media / Code</span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__statement reveal">Moving images, interfaces and digital experiences for brands, media and culture.</p>
+        <p class="hero__small reveal">Advanced After Effects / Premiere / Cinema 4D / Blender, with deep experience in broadcast, advertising, interactive media, WebGL, real-time 3D and AI-assisted production.</p>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-head">
+        <div class="kicker">Selected work / 01</div>
+        <h2 class="section-title reveal">Big picture thinking. Hands-on production.</h2>
+      </div>
+      <div class="projects" id="featuredProjects" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="manifesto">
+        <p class="manifesto__big reveal">Between the timeline and the browser.</p>
+        <div>
+          <p class="manifesto__copy reveal">I design motion, brand experiences and digital systems — then I make them work.</p>
+          <p class="manifesto__copy small reveal">My background runs through MTV broadcast design, Wunderman and Schawk advertising, Samsung R&amp;D, SeenThis streaming media and independent creative technology. The common thread is visual storytelling, production craft and curiosity about how new tools can change the work.</p>
+          <p class="manifesto__copy small reveal">I am as comfortable in After Effects, Premiere, Cinema 4D or Blender as I am prototyping motion systems with JavaScript, GSAP, PixiJS, Three.js and WebGL.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="archive">
+      <div class="section-head">
+        <div class="kicker">Project archive / 02</div>
+        <h2 class="section-title reveal">Years of experiments, campaigns, prototypes and moving things.</h2>
+      </div>
+
+      <div class="archive-tools">
+        <input id="archiveSearch" class="archive-search" type="search" autocomplete="off" placeholder="Search the archive…" aria-label="Search project archive">
+        <div id="archiveCount" class="archive-count">Loading archive…</div>
+      </div>
+
+      <div id="archiveGrid" class="archive-grid"></div>
+      <button id="loadMore" class="load-more" type="button" hidden>Load more</button>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <h2 class="reveal">Make<br>something<br>move.</h2>
+    <div class="contact__row">
+      <a class="contact__mail" href="mailto:sylwester@workwork.fun">sylwester@workwork.fun</a>
+      <div class="contact__links">
+        <a href="https://www.linkedin.com/in/extended-realities/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://metaboy.tech/labs/" target="_blank" rel="noopener">Labs ↗</a>
+        <a href="https://github.com/sylwesterdigital" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="cv/CreativeTechnologist__Sylwester_Mielniczuk.pdf" target="_blank" rel="noopener">CV ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="theme-switcher" aria-label="Colour theme">
+    <span class="theme-switcher__label">Colour</span>
+    <button class="theme-swatch" type="button" data-set-theme="paper" aria-label="Warm paper theme" aria-pressed="true"></button>
+    <button class="theme-swatch" type="button" data-set-theme="oxide" aria-label="Oxide red theme" aria-pressed="false"></button>
+    <button class="theme-swatch" type="button" data-set-theme="cobalt" aria-label="Cobalt blue theme" aria-pressed="false"></button>
+    <button class="theme-swatch" type="button" data-set-theme="acid" aria-label="Acid green theme" aria-pressed="false"></button>
+  </div>
+
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__media" id="modalMedia"></div>
+    <aside class="modal__aside">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Close project">×</button>
+      <div>
+        <p class="modal__kicker" id="modalKicker">Project</p>
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+        <div class="modal__links" id="modalLinks"></div>
+      </div>
+      <div class="modal__nav">
+        <button id="modalPrev" type="button">← Previous</button>
+        <button id="modalNext" type="button">Next →</button>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const DATA_URL = './images/gallery2/data-gallery.json';
+      const MEDIA_BASE = './images/gallery2/';
+      const PAGE_SIZE = 36;
+
+      const THEMES = ['paper', 'oxide', 'cobalt', 'acid'];
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+      function setTheme(theme, persist = true) {
+        const next = THEMES.includes(theme) ? theme : 'paper';
+        document.documentElement.dataset.theme = next;
+        document.querySelectorAll('[data-set-theme]').forEach(btn => {
+          btn.setAttribute('aria-pressed', String(btn.dataset.setTheme === next));
+        });
+        if (themeMeta) {
+          const paper = getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();
+          if (paper) themeMeta.setAttribute('content', paper);
+        }
+        if (persist) {
+          try { localStorage.setItem('portfolio-theme', next); } catch (_) {}
+        }
+      }
+
+      function initThemes() {
+        let stored = 'paper';
+        try { stored = localStorage.getItem('portfolio-theme') || 'paper'; } catch (_) {}
+        setTheme(stored, false);
+        document.querySelectorAll('[data-set-theme]').forEach(btn => {
+          btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
+        });
+        document.addEventListener('keydown', e => {
+          if ((e.key === 't' || e.key === 'T') && !/input|textarea/i.test(document.activeElement?.tagName || '')) {
+            const current = document.documentElement.dataset.theme || 'paper';
+            setTheme(THEMES[(THEMES.indexOf(current) + 1) % THEMES.length]);
+          }
+        });
+      }
+
+      const featured = [
+        {
+          src: 'samsung-ai1',
+          label: 'Motion / Advertising / 2025',
+          title: 'Samsung Galaxy AI',
+          copy: 'Motion-led campaign production for Galaxy S25 / Gemini AI across high-performance digital media.'
+        },
+        {
+          src: 'adidasgolf',
+          label: 'Motion / Digital / 2025',
+          title: 'Adidas Golf',
+          copy: 'Animated campaign creative built for fast, lightweight delivery across digital formats.'
+        },
+        {
+          src: 'byd',
+          label: 'Automotive / Motion / Digital',
+          title: 'BYD Sealion 7',
+          copy: 'Brand motion translated into responsive campaign assets for high-performance media delivery.'
+        },
+        {
+          src: 'defender',
+          label: 'Interactive / Automotive / Display',
+          title: 'Defender 360',
+          copy: 'Interactive automotive creative combining product storytelling, motion and hands-on technical production.'
+        },
+        {
+          src: 'vVRr4YYotzs',
+          label: 'MTV / Broadcast + Digital / 2006',
+          title: 'MTV Staying Alive',
+          copy: 'Motion and digital work from an era of broadcast identities, promos, branded content and interactive media.'
+        },
+        {
+          src: 'EH0DLOgc6Ho',
+          label: 'Wunderman / Nokia / 2009',
+          title: 'Nokia Finnish Christmas',
+          copy: 'Award-winning interactive campaign work combining playful animation, design and digital production.'
+        },
+        {
+          src: 'jQM90wMqYwg',
+          label: 'Samsung R&D / WebXR / 2021–22',
+          title: 'Myrtis — Immersive Quiz',
+          copy: 'Experimental WebXR storytelling built within Samsung R&D using real-time graphics and spatial interaction.'
+        },
+        {
+          src: 'FrFL46Auec4',
+          label: 'Motion / Brand / Social',
+          title: 'KitKat',
+          copy: 'Short-form branded motion exploring timing, colour, typography and product-led animation.'
+        },
+        {
+          src: '5DreSZuVvtQ',
+          label: 'Advertising / Motion / Digital',
+          title: 'American Express',
+          copy: 'Campaign motion and digital production across multiple formats and brand requirements.'
+        }
+      ];
+
+      const layoutClasses = ['project--wide', '', '', 'project--offset', '', '', 'project--wide', '', ''];
+
+      let all = [];
+      let filtered = [];
+      let shown = PAGE_SIZE;
+      let modalList = [];
+      let modalIndex = 0;
+
+      const $ = (s, root = document) => root.querySelector(s);
+      const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+      const clean = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+      const mediaUrl = item => `${MEDIA_BASE}video-${item.src}/${item.src}.mp4`;
+      const thumbUrl = item => `${MEDIA_BASE}${item.thumbnail || `video-${item.src}/${item.src}.gif`}`;
+
+      function make(tag, className, text) {
+        const el = document.createElement(tag);
+        if (className) el.className = className;
+        if (text != null) el.textContent = text;
+        return el;
+      }
+
+      function extractUrls(text) {
+        const matches = String(text || '').match(/https?:\/\/[^\s)\]]+/g) || [];
+        return [...new Set(matches.map(x => x.replace(/[.,;]+$/, '')))];
+      }
+
+      function humanMeta(item) {
+        const hay = `${item.title || ''} ${item.description || ''}`.toLowerCase();
+        const tags = [];
+        if (/after.?effects|motion|animation|gif|video|promo|stings?|mtv/.test(hay)) tags.push('Motion');
+        if (/adops|banner|display|campaign|advert|doubleclick|flashtalking|seenthis/.test(hay)) tags.push('Advertising');
+        if (/webxr|vr\b|xr\b|oculus|immersive/.test(hay)) tags.push('XR');
+        if (/webgl|three\.js|threejs|pixi|canvas|gpu|shader/.test(hay)) tags.push('Realtime');
+        if (/\bai\b|stable diffusion|midas|gemini|llm/.test(hay)) tags.push('AI');
+        if (/prototype|poc|research|r&d/.test(hay)) tags.push('Prototype');
+        return (tags.length ? tags.slice(0, 3) : ['Project']).join(' · ');
+      }
+
+      function createFeaturedCard(feature, index) {
+        const item = all.find(x => x.src === feature.src);
+        if (!item) return null;
+
+        const article = make('article', `project ${layoutClasses[index] || ''} reveal`);
+        const media = make('div', 'project__media');
+        media.tabIndex = 0;
+        media.setAttribute('role', 'button');
+        media.setAttribute('aria-label', `Open ${feature.title}`);
+
+        const poster = new Image();
+        poster.src = thumbUrl(item);
+        poster.alt = '';
+        poster.loading = index < 2 ? 'eager' : 'lazy';
+        poster.decoding = 'async';
+        media.appendChild(poster);
+
+        const video = document.createElement('video');
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = 'none';
+        video.poster = thumbUrl(item);
+        video.dataset.src = mediaUrl(item);
+        media.appendChild(video);
+
+        const badge = make('span', 'project__badge', feature.label);
+        media.appendChild(badge);
+
+        const body = make('div', 'project__body');
+        body.appendChild(make('h3', 'project__title', feature.title));
+        body.appendChild(make('p', 'project__copy', feature.copy));
+
+        const open = () => openModal(item, all);
+        media.addEventListener('click', open);
+        media.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+
+        article.append(media, body);
+        return article;
+      }
+
+      function initFeaturedVideos() {
+        const videos = $$('.project__media video[data-src]');
+        const obs = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              if (!video.src) video.src = video.dataset.src;
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { rootMargin: '160px 0px', threshold: .22 });
+        videos.forEach(v => obs.observe(v));
+      }
+
+      function renderFeatured() {
+        const root = $('#featuredProjects');
+        root.textContent = '';
+        featured.forEach((feature, index) => {
+          const card = createFeaturedCard(feature, index);
+          if (card) root.appendChild(card);
+        });
+        initFeaturedVideos();
+        observeReveal();
+      }
+
+      function createArchiveCard(item) {
+        const card = make('article', 'archive-card reveal');
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open ${clean(item.title) || 'project'}`);
+
+        const media = make('div', 'archive-card__media');
+        const img = new Image();
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.alt = '';
+        img.src = thumbUrl(item);
+        media.appendChild(img);
+
+        card.appendChild(media);
+        card.appendChild(make('h3', 'archive-card__title', clean(item.title) || 'Untitled'));
+        card.appendChild(make('p', 'archive-card__meta', humanMeta(item)));
+
+        const open = () => openModal(item, filtered);
+        card.addEventListener('click', open);
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+        });
+        return card;
+      }
+
+      function renderArchive(reset = false) {
+        if (reset) shown = PAGE_SIZE;
+        const grid = $('#archiveGrid');
+        grid.textContent = '';
+        filtered.slice(0, shown).forEach(item => grid.appendChild(createArchiveCard(item)));
+
+        $('#archiveCount').textContent = `${filtered.length} project${filtered.length === 1 ? '' : 's'}`;
+        const load = $('#loadMore');
+        load.hidden = shown >= filtered.length;
+        load.textContent = `Load more — ${Math.min(PAGE_SIZE, filtered.length - shown)} next`;
+        observeReveal();
+      }
+
+      function searchArchive(value) {
+        const q = clean(value).toLowerCase();
+        if (!q) filtered = [...all];
+        else filtered = all.filter(item => `${item.title || ''} ${item.description || ''} ${humanMeta(item)}`.toLowerCase().includes(q));
+        renderArchive(true);
+      }
+
+      function openModal(item, list) {
+        modalList = list?.length ? list : all;
+        modalIndex = Math.max(0, modalList.findIndex(x => x.src === item.src));
+        updateModal();
+        $('#projectModal').classList.add('is-open');
+        document.body.classList.add('modal-open');
+        $('#modalClose').focus();
+      }
+
+      function updateModal() {
+        const item = modalList[modalIndex];
+        if (!item) return;
+
+        $('#modalKicker').textContent = humanMeta(item);
+        $('#modalTitle').textContent = clean(item.title) || 'Untitled';
+        $('#modalDesc').textContent = clean(item.description) || 'Selected project from the archive.';
+
+        const media = $('#modalMedia');
+        media.textContent = '';
+
+        // Thumbnails/GIFs are only for the gallery. Opening a project always
+        // switches to the corresponding MP4 from video-<src>/<src>.mp4.
+        const video = document.createElement('video');
+        video.controls = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.preload = 'auto';
+        video.src = mediaUrl(item);
+        video.setAttribute('aria-label', `${clean(item.title) || 'Project'} video`);
+        media.appendChild(video);
+
+        // The modal is opened from an explicit click/key action, so request
+        // playback immediately instead of showing the animated GIF as a poster.
+        video.load();
+        const startPlayback = () => video.play().catch(() => {});
+        video.addEventListener('canplay', startPlayback, { once: true });
+        startPlayback();
+
+        video.addEventListener('error', () => {
+          const message = make('p', 'modal__video-error', 'Video could not be loaded.');
+          media.appendChild(message);
+        }, { once: true });
+
+        const links = $('#modalLinks');
+        links.textContent = '';
+        extractUrls(item.description).slice(0, 3).forEach((url, i) => {
+          const a = make('a', '', i === 0 ? 'Open related link ↗' : `Link ${i + 1} ↗`);
+          a.href = url;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          links.appendChild(a);
+        });
+      }
+
+      function closeModal() {
+        $('#projectModal').classList.remove('is-open');
+        document.body.classList.remove('modal-open');
+        $('#modalMedia').textContent = '';
+      }
+
+      function modalStep(dir) {
+        if (!modalList.length) return;
+        modalIndex = (modalIndex + dir + modalList.length) % modalList.length;
+        updateModal();
+      }
+
+      let revealObserver;
+      function observeReveal() {
+        if (!revealObserver) {
+          revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: .08, rootMargin: '0px 0px -6% 0px' });
+        }
+        $$('.reveal:not(.in)').forEach(el => revealObserver.observe(el));
+      }
+
+      async function init() {
+        initThemes();
+        observeReveal();
+
+        try {
+          const response = await fetch(DATA_URL, { cache: 'no-store' });
+          if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+          all = await response.json();
+          if (!Array.isArray(all)) throw new Error('Gallery data is not an array');
+          filtered = [...all];
+          renderFeatured();
+          renderArchive(true);
+        } catch (err) {
+          console.error('Portfolio archive failed to load:', err);
+          $('#archiveCount').textContent = 'Archive unavailable';
+          $('#archiveGrid').appendChild(make('p', '', 'The project archive could not be loaded. Check images/gallery2/data-gallery.json.'));
+        }
+      }
+
+      $('#archiveSearch').addEventListener('input', e => searchArchive(e.target.value));
+      $('#loadMore').addEventListener('click', () => { shown += PAGE_SIZE; renderArchive(false); });
+      $('#modalClose').addEventListener('click', closeModal);
+      $('#modalPrev').addEventListener('click', () => modalStep(-1));
+      $('#modalNext').addEventListener('click', () => modalStep(1));
+      $('#projectModal').addEventListener('click', e => { if (e.target.id === 'projectModal') closeModal(); });
+      document.addEventListener('keydown', e => {
+        if (!$('#projectModal').classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') modalStep(-1);
+        if (e.key === 'ArrowRight') modalStep(1);
+      });
+
+      init();
+    })();
+  </script>
+</body>
+</html>
