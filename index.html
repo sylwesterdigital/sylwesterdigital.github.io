@@ -438,6 +438,12 @@
       object-fit: contain;
       background: #000;
     }
+    .modal__video-error {
+      position: absolute;
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
     .modal__aside {
       position: relative;
       display: flex;
@@ -911,16 +917,29 @@
 
         const media = $('#modalMedia');
         media.textContent = '';
+
+        // Thumbnails/GIFs are only for the gallery. Opening a project always
+        // switches to the corresponding MP4 from video-<src>/<src>.mp4.
         const video = document.createElement('video');
         video.controls = true;
         video.autoplay = true;
         video.playsInline = true;
-        video.poster = thumbUrl(item);
-        const source = document.createElement('source');
-        source.src = mediaUrl(item);
-        source.type = 'video/mp4';
-        video.appendChild(source);
+        video.preload = 'auto';
+        video.src = mediaUrl(item);
+        video.setAttribute('aria-label', `${clean(item.title) || 'Project'} video`);
         media.appendChild(video);
+
+        // The modal is opened from an explicit click/key action, so request
+        // playback immediately instead of showing the animated GIF as a poster.
+        video.load();
+        const startPlayback = () => video.play().catch(() => {});
+        video.addEventListener('canplay', startPlayback, { once: true });
+        startPlayback();
+
+        video.addEventListener('error', () => {
+          const message = make('p', 'modal__video-error', 'Video could not be loaded.');
+          media.appendChild(message);
+        }, { once: true });
 
         const links = $('#modalLinks');
         links.textContent = '';
