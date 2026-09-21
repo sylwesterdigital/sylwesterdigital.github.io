@@ -15,15 +15,56 @@
       --muted: #78746c;
       --line: rgba(11,11,11,.22);
       --accent: #ff4b18;
+      --media-bg: #d8d4cb;
+      --chip: rgba(242,239,232,.92);
+      --placeholder: #aaa59c;
       --pad: clamp(18px, 2.35vw, 40px);
       --gutter: clamp(14px, 1.45vw, 24px);
       --display: Arial, Helvetica, sans-serif;
       --sans: Arial, Helvetica, sans-serif;
     }
 
+    html[data-theme="oxide"] {
+      --paper: #c93623;
+      --ink: #f5efe4;
+      --muted: #f0beb3;
+      --line: rgba(245,239,228,.27);
+      --accent: #121212;
+      --media-bg: #9f2518;
+      --chip: rgba(245,239,228,.92);
+      --placeholder: #efb8ae;
+    }
+
+    html[data-theme="cobalt"] {
+      --paper: #1649ff;
+      --ink: #f8f3e8;
+      --muted: #c7d3ff;
+      --line: rgba(248,243,232,.28);
+      --accent: #fff04a;
+      --media-bg: #0d37c7;
+      --chip: rgba(248,243,232,.93);
+      --placeholder: #aebeff;
+    }
+
+    html[data-theme="acid"] {
+      --paper: #d8ff42;
+      --ink: #101010;
+      --muted: #50582b;
+      --line: rgba(16,16,16,.24);
+      --accent: #ff4775;
+      --media-bg: #b9d92e;
+      --chip: rgba(16,16,16,.92);
+      --placeholder: #758038;
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: var(--paper); color: var(--ink); }
     body { margin: 0; font-family: var(--sans); background: var(--paper); color: var(--ink); overflow-x: hidden; }
+    html, body, .topbar, .archive-tools, .contact, .section, .hero, .load-more, .theme-switcher {
+      transition: background-color .58s cubic-bezier(.2,.7,.15,1), color .58s cubic-bezier(.2,.7,.15,1), border-color .58s cubic-bezier(.2,.7,.15,1);
+    }
+    .hero__dot, .theme-swatch { transition: background-color .58s cubic-bezier(.2,.7,.15,1), transform .25s ease, border-color .3s ease; }
+    .hero h1 .outline { transition: -webkit-text-stroke-color .58s cubic-bezier(.2,.7,.15,1); }
     body.modal-open { overflow: hidden; }
     button, input, a { font: inherit; }
     a { color: inherit; text-decoration: none; }
@@ -197,7 +238,7 @@
     .project__media {
       position: relative;
       overflow: hidden;
-      background: #d8d4cb;
+      background: var(--media-bg);
       aspect-ratio: 4 / 3;
       cursor: pointer;
     }
@@ -225,13 +266,16 @@
       left: 14px;
       padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(242,239,232,.92);
+      background: var(--chip);
       font-size: 10px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .08em;
       backdrop-filter: blur(8px);
     }
+    html[data-theme="acid"] .project__badge { color: var(--paper); }
+    html[data-theme="oxide"] .project__badge,
+    html[data-theme="cobalt"] .project__badge { color: #101010; }
 
     .project__body {
       display: grid;
@@ -312,7 +356,7 @@
       letter-spacing: -.04em;
       font-weight: 700;
     }
-    .archive-search::placeholder { color: #aaa59c; opacity: 1; }
+    .archive-search::placeholder { color: var(--placeholder); opacity: 1; }
     .archive-count {
       white-space: nowrap;
       color: var(--muted);
@@ -335,7 +379,7 @@
       position: relative;
       aspect-ratio: 1 / 1;
       overflow: hidden;
-      background: #d8d4cb;
+      background: var(--media-bg);
     }
     .archive-card__media img {
       width: 100%;
@@ -412,6 +456,51 @@
       gap: 12px 22px;
       font-size: 13px;
     }
+
+    .theme-switcher {
+      position: fixed;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 70;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 9px 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      color: var(--ink);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 34px rgba(0,0,0,.08);
+    }
+    .theme-switcher__label {
+      margin-right: 2px;
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .theme-swatch {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+    }
+    .theme-swatch:hover { transform: scale(1.13); }
+    .theme-swatch[aria-pressed="true"] {
+      transform: scale(1.16);
+      box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink);
+    }
+    .theme-swatch[data-set-theme="paper"] { background: linear-gradient(135deg, #f2efe8 0 48%, #ff4b18 48% 66%, #0b0b0b 66%); }
+    .theme-swatch[data-set-theme="oxide"] { background: linear-gradient(135deg, #c93623 0 63%, #f5efe4 63%); }
+    .theme-swatch[data-set-theme="cobalt"] { background: linear-gradient(135deg, #1649ff 0 63%, #fff04a 63%); }
+    .theme-swatch[data-set-theme="acid"] { background: linear-gradient(135deg, #d8ff42 0 63%, #ff4775 63%); }
 
     .modal {
       position: fixed;
@@ -496,6 +585,40 @@
       text-transform: uppercase;
       letter-spacing: .06em;
     }
+    .icon-arrow {
+      width: 1em;
+      height: 1em;
+      flex: 0 0 auto;
+      display: inline-block;
+      vertical-align: -0.12em;
+      overflow: visible;
+    }
+    .icon-arrow path {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+    .external-link,
+    .modal__links a,
+    .modal__nav button {
+      display: inline-flex;
+      align-items: center;
+      gap: .45em;
+    }
+    .external-link .icon-arrow,
+    .modal__links .icon-arrow { width: .95em; height: .95em; }
+    .modal__nav button:first-child { justify-content: flex-start; }
+    .modal__nav button:last-child { justify-content: flex-end; }
+    .modal__nav .icon-arrow { width: 1.15em; height: 1.15em; transition: transform .2s ease; }
+    .modal__nav button:first-child:hover .icon-arrow { transform: translateX(-3px); }
+    .modal__nav button:last-child:hover .icon-arrow { transform: translateX(3px); }
+    .external-link .icon-arrow,
+    .modal__links .icon-arrow { transition: transform .2s ease; }
+    .external-link:hover .icon-arrow,
+    .modal__links a:hover .icon-arrow { transform: translate(2px, -2px); }
     .modal__nav {
       display: flex;
       justify-content: space-between;
@@ -523,6 +646,65 @@
       background: #ffdf00;
       color: #111;
       font-weight: 700;
+    }
+
+
+    /* Inertial mix-blend cursor — desktop/fine pointers only. */
+    .cursor-orb {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 9999;
+      width: 34px;
+      height: 34px;
+      margin: -17px 0 0 -17px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      background: rgba(255,255,255,.025);
+      mix-blend-mode: difference;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate3d(-100px,-100px,0) scale(1);
+      transform-origin: 50% 50%;
+      will-change: transform, opacity;
+      transition: opacity .2s ease, border-width .18s ease, background-color .18s ease;
+      contain: layout style paint;
+    }
+    .cursor-orb::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      margin: -2px 0 0 -2px;
+      border-radius: 50%;
+      background: #fff;
+      transform: scale(1);
+      transition: transform .18s cubic-bezier(.2,.8,.2,1), opacity .18s ease;
+    }
+    .cursor-orb.is-visible { opacity: .98; }
+    .cursor-orb.is-link {
+      border-width: 1px;
+      background: rgba(255,255,255,.09);
+    }
+    .cursor-orb.is-link::after { transform: scale(.55); }
+    .cursor-orb.is-down {
+      border-width: 2px;
+      background: rgba(255,255,255,.18);
+    }
+    .cursor-orb.is-down::after { transform: scale(3.2); }
+
+    @media (pointer: fine) and (hover: hover) {
+      html.has-fancy-cursor body,
+      html.has-fancy-cursor a,
+      html.has-fancy-cursor button,
+      html.has-fancy-cursor [role="button"],
+      html.has-fancy-cursor .project__media,
+      html.has-fancy-cursor .archive-card,
+      html.has-fancy-cursor .theme-swatch {
+        cursor: none !important;
+      }
     }
 
     @media (max-width: 900px) {
@@ -559,6 +741,12 @@
       .modal { grid-template-rows: 48svh 52svh; }
       .modal__aside { padding: 20px; }
       .modal__title { font-size: 40px; }
+    }
+
+    @media (max-width: 560px) {
+      .theme-switcher { right: 10px; bottom: 10px; padding: 7px; gap: 6px; }
+      .theme-switcher__label { display: none; }
+      .theme-swatch { width: 19px; height: 19px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -654,13 +842,21 @@
     <div class="contact__row">
       <a class="contact__mail" href="mailto:sylwester@workwork.fun">sylwester@workwork.fun</a>
       <div class="contact__links">
-        <a href="https://www.linkedin.com/in/extended-realities/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://metaboy.tech/labs/" target="_blank" rel="noopener">Labs ↗</a>
-        <a href="https://github.com/sylwesterdigital" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="cv/CreativeTechnologist__Sylwester_Mielniczuk.pdf" target="_blank" rel="noopener">CV ↗</a>
+        <a class="external-link" href="https://www.linkedin.com/in/extended-realities/" target="_blank" rel="noopener">LinkedIn <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+        <a class="external-link" href="https://metaboy.tech/labs/" target="_blank" rel="noopener">Labs <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+        <a class="external-link" href="https://github.com/sylwesterdigital" target="_blank" rel="noopener">GitHub <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
+        <a class="external-link" href="cv/CreativeTechnologist__Sylwester_Mielniczuk.pdf" target="_blank" rel="noopener">CV <svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></a>
       </div>
     </div>
   </footer>
+
+  <div class="theme-switcher" aria-label="Colour theme">
+    <span class="theme-switcher__label">Colour</span>
+    <button class="theme-swatch" type="button" data-set-theme="paper" aria-label="Warm paper theme" aria-pressed="true"></button>
+    <button class="theme-swatch" type="button" data-set-theme="oxide" aria-label="Oxide red theme" aria-pressed="false"></button>
+    <button class="theme-swatch" type="button" data-set-theme="cobalt" aria-label="Cobalt blue theme" aria-pressed="false"></button>
+    <button class="theme-swatch" type="button" data-set-theme="acid" aria-label="Acid green theme" aria-pressed="false"></button>
+  </div>
 
   <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal__media" id="modalMedia"></div>
@@ -673,8 +869,8 @@
         <div class="modal__links" id="modalLinks"></div>
       </div>
       <div class="modal__nav">
-        <button id="modalPrev" type="button">← Previous</button>
-        <button id="modalNext" type="button">Next →</button>
+        <button id="modalPrev" type="button"><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg><span>Previous</span></button>
+        <button id="modalNext" type="button"><span>Next</span><svg class="icon-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
       </div>
     </aside>
   </div>
@@ -686,6 +882,125 @@
       const DATA_URL = './images/gallery2/data-gallery.json';
       const MEDIA_BASE = './images/gallery2/';
       const PAGE_SIZE = 36;
+
+      const THEMES = ['paper', 'oxide', 'cobalt', 'acid'];
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+      function setTheme(theme, persist = true) {
+        const next = THEMES.includes(theme) ? theme : 'paper';
+        document.documentElement.dataset.theme = next;
+        document.querySelectorAll('[data-set-theme]').forEach(btn => {
+          btn.setAttribute('aria-pressed', String(btn.dataset.setTheme === next));
+        });
+        if (themeMeta) {
+          const paper = getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();
+          if (paper) themeMeta.setAttribute('content', paper);
+        }
+        if (persist) {
+          try { localStorage.setItem('portfolio-theme', next); } catch (_) {}
+        }
+      }
+
+
+      function initFancyCursor() {
+        const finePointer = window.matchMedia('(pointer: fine) and (hover: hover)').matches;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!finePointer || reducedMotion) return;
+
+        document.documentElement.classList.add('has-fancy-cursor');
+
+        const cursor = document.createElement('div');
+        cursor.className = 'cursor-orb';
+        cursor.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(cursor);
+
+        let targetX = window.innerWidth * .5;
+        let targetY = window.innerHeight * .5;
+        let x = targetX;
+        let y = targetY;
+        let lastTargetX = targetX;
+        let lastTargetY = targetY;
+        let motionBoost = 0;
+        let pressKick = 0;
+        let hoverScale = 1;
+        let running = true;
+
+        const interactiveSelector = 'a, button, [role="button"], .project__media, .archive-card, .theme-swatch';
+
+        const setHoverState = target => {
+          const interactive = target instanceof Element && target.closest(interactiveSelector);
+          cursor.classList.toggle('is-link', !!interactive);
+          hoverScale = interactive ? 1.72 : 1;
+        };
+
+        document.addEventListener('pointermove', e => {
+          if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+          const dx = e.clientX - lastTargetX;
+          const dy = e.clientY - lastTargetY;
+          const speed = Math.hypot(dx, dy);
+          targetX = e.clientX;
+          targetY = e.clientY;
+          lastTargetX = e.clientX;
+          lastTargetY = e.clientY;
+          motionBoost = Math.min(.48, speed * .018);
+          cursor.classList.add('is-visible');
+          setHoverState(e.target);
+        }, { passive: true });
+
+        document.addEventListener('pointerdown', e => {
+          if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+          pressKick = -.34;
+          cursor.classList.add('is-down');
+        }, { passive: true });
+
+        document.addEventListener('pointerup', e => {
+          if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+          pressKick = .20;
+          cursor.classList.remove('is-down');
+        }, { passive: true });
+
+        document.addEventListener('pointerover', e => setHoverState(e.target), { passive: true });
+        document.addEventListener('pointerleave', () => cursor.classList.remove('is-visible'), { passive: true });
+        document.addEventListener('pointerenter', () => cursor.classList.add('is-visible'), { passive: true });
+
+        window.addEventListener('blur', () => cursor.classList.remove('is-visible'));
+
+        function frame() {
+          if (!running) return;
+
+          // Position deliberately lags behind the real pointer for soft inertia.
+          x += (targetX - x) * .145;
+          y += (targetY - y) * .145;
+
+          // Movement briefly expands the ring; clicks compress then rebound it.
+          motionBoost *= .84;
+          pressKick *= .82;
+          const scale = Math.max(.55, hoverScale + motionBoost + pressKick);
+
+          cursor.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+          requestAnimationFrame(frame);
+        }
+
+        requestAnimationFrame(frame);
+
+        // Stop drawing if this script is ever torn down by a live-reload shell.
+        window.addEventListener('pagehide', () => { running = false; }, { once: true });
+      }
+
+      function initThemes() {
+        let stored = 'paper';
+        try { stored = localStorage.getItem('portfolio-theme') || 'paper'; } catch (_) {}
+        setTheme(stored, false);
+        document.querySelectorAll('[data-set-theme]').forEach(btn => {
+          btn.addEventListener('click', () => setTheme(btn.dataset.setTheme));
+        });
+        document.addEventListener('keydown', e => {
+          if ((e.key === 't' || e.key === 'T') && !/input|textarea/i.test(document.activeElement?.tagName || '')) {
+            const current = document.documentElement.dataset.theme || 'paper';
+            setTheme(THEMES[(THEMES.indexOf(current) + 1) % THEMES.length]);
+          }
+        });
+      }
 
       const featured = [
         {
@@ -763,6 +1078,27 @@
         if (className) el.className = className;
         if (text != null) el.textContent = text;
         return el;
+      }
+
+      function arrowIcon(direction = 'external') {
+        const ns = 'http://www.w3.org/2000/svg';
+        const svg = document.createElementNS(ns, 'svg');
+        svg.setAttribute('class', 'icon-arrow');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('aria-hidden', 'true');
+
+        const paths = direction === 'external'
+          ? ['M7 17 17 7', 'M9 7h8v8']
+          : direction === 'left'
+            ? ['M19 12H5', 'm11 6-6 6 6 6']
+            : ['M5 12h14', 'm13 6 6 6-6 6'];
+
+        paths.forEach(d => {
+          const path = document.createElementNS(ns, 'path');
+          path.setAttribute('d', d);
+          svg.appendChild(path);
+        });
+        return svg;
       }
 
       function extractUrls(text) {
@@ -944,7 +1280,9 @@
         const links = $('#modalLinks');
         links.textContent = '';
         extractUrls(item.description).slice(0, 3).forEach((url, i) => {
-          const a = make('a', '', i === 0 ? 'Open related link ↗' : `Link ${i + 1} ↗`);
+          const a = make('a', '');
+          a.appendChild(document.createTextNode(i === 0 ? 'Open related link' : `Link ${i + 1}`));
+          a.appendChild(arrowIcon('external'));
           a.href = url;
           a.target = '_blank';
           a.rel = 'noopener';
@@ -980,6 +1318,8 @@
       }
 
       async function init() {
+        initThemes();
+        initFancyCursor();
         observeReveal();
 
         try {
